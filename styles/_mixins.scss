@@ -1,0 +1,24 @@
+/* One line horizontal padding, shamelessly ripped off from React Native */
+@mixin padding-horizontal($padding, $right-padding: null) {
+	@if $right-padding {
+		padding-left: $padding;
+		padding-right: $right-padding;
+	}
+	@else {
+		padding-left: $padding;
+		padding-right: $padding;
+	}
+}
+
+
+/* One line vertical padding, shamelessly ripped off from React Native */
+@mixin padding-vertical($padding, $bottom-padding: null) {
+	@if $bottom-padding {
+		padding-top: $padding;
+		padding-bottom: $bottom-padding;
+	}
+	@else {
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+}

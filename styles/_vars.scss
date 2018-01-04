@@ -1,0 +1,6 @@
+@import 'colors';
+
+// Excessive pretty fallbacks for all OSes to not block rendering by webfonts
+$base-font-family: 'Avenir', -apple-system, BlinkMacSystemFont, wf_segoe-ui_light, wf_segoe-ui_normal, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$transition: all 0.2s ease;
