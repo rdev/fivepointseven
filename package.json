@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "next start"
+		"install": "prettier --write package.json",
+		"start": "next start",
+		"lint": "eslint *.js './**/*.js' --fix"
 	},
 	"dependencies": {
 		"autobind-decorator": "^2.1.0",
@@ -34,6 +36,7 @@
 		"node-sass": "^4.7.2",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-loader": "^2.0.9",
+		"prettier": "^1.9.2",
 		"raw-loader": "^0.5.1",
 		"sass-loader": "^6.0.6"
 	}

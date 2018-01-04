@@ -1,7 +1,7 @@
-const next = require('next');
 const { createServer } = require('http');
 const { parse } = require('url');
 const { createReadStream } = require('fs');
+const next = require('next');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });

@@ -1,5 +1,4 @@
 import Router from 'next/router';
-import Link from 'next/link';
 import { TweenMax, Power2, TimelineMax } from 'gsap';
 import autobind from 'autobind-decorator';
 import { sleep } from '../lib/utils';

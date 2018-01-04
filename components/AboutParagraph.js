@@ -32,7 +32,7 @@ export default class AboutParagraph extends React.Component {
 			<p className="about-paragraph" id="about-paragraph">
 				<span>
 					Hi! I’m Max, and I code JavaScript. But you already know that. We both know you came
-					here for exposition, so here's exposition.
+					here for exposition, so here’s exposition.
 				</span>
 				<br />
 				<span>
@@ -46,7 +46,7 @@ export default class AboutParagraph extends React.Component {
 				<br />
 				<span>
 					Anyway, today my field of knowledhe includes Node, React, React Native, Docker and all
-					the things that go with it. Question. Do I really need to list all the <a className="inline-link" onClick={this.showFrameworksModal}>frameworks</a> like people do?
+					the things that go with it. Question. Do I really need to list all the <a className="inline-link" href="/about/frameworks" onClick={this.showFrameworksModal}>frameworks</a> like people do?
 				</span>
 			</p>
 		);
