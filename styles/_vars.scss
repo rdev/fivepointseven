@@ -1,6 +1,21 @@
 @import 'colors';
 
+@font-face {
+	font-family: 'fivepointseven';
+	src: url('/static/font-main.woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'fivepointseven';
+	src: url('/static/font-light.woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
 // Excessive pretty fallbacks for all OSes to not block rendering by webfonts
-$base-font-family: 'Avenir', -apple-system, BlinkMacSystemFont, wf_segoe-ui_light, wf_segoe-ui_normal, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-family: 'fivepointseven', 'Avenir', -apple-system, BlinkMacSystemFont, wf_segoe-ui_light,
+	wf_segoe-ui_normal, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $transition: all 0.2s ease;

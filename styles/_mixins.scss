@@ -3,21 +3,18 @@
 	@if $right-padding {
 		padding-left: $padding;
 		padding-right: $right-padding;
-	}
-	@else {
+	} @else {
 		padding-left: $padding;
 		padding-right: $padding;
 	}
 }
-
 
 /* One line vertical padding, shamelessly ripped off from React Native */
 @mixin padding-vertical($padding, $bottom-padding: null) {
 	@if $bottom-padding {
 		padding-top: $padding;
 		padding-bottom: $bottom-padding;
-	}
-	@else {
+	} @else {
 		padding-top: $padding;
 		padding-bottom: $padding;
 	}

@@ -1,7 +1,9 @@
 const path = require('path');
 const glob = require('glob');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
+	poweredByHeader: false,
 	webpack: (config) => {
 		config.module.rules.push(
 			{
@@ -33,6 +35,22 @@ module.exports = {
 				],
 			},
 		);
+
+		config.plugins.push(new SWPrecacheWebpackPlugin({
+			verbose: true,
+			staticFileGlobsIgnorePatterns: [/\.next\//],
+			staticFileGlobs: ['static/**/**.*'],
+			runtimeCaching: [
+				{
+					handler: 'cacheFirst',
+					urlPattern: /^https?.*/,
+				},
+			],
+			dynamicUrlToDependencies: {
+				'/': ['pages/index.js'],
+				'/about': ['pages/about.js'],
+			},
+		}));
 
 		return config;
 	},

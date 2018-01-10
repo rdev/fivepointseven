@@ -4,8 +4,8 @@ const HomeWelcome = () => (
 	<div className="home-welcome" id="home-welcome">
 		<Logo />
 		<div className="home-heading" id="home-heading">
-			<img src="/static/home-header.svg" alt="logo" draggable={false} />
-			<img src="/static/home-subheader.svg" alt="logo" draggable={false} />
+			<h1>Hello. I{"'"}m Max</h1>
+			<h2>full stack javascript developer</h2>
 		</div>
 	</div>
 );
