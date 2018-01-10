@@ -33,7 +33,7 @@
 /* =============== ANIMATION CLASSES =============== */
 
 .compass-animated {
-	animation: 0.6s $ease-out-quad compass-animation forwards;
+	animation: 0.6s $ease-out-quad home-compass-animation forwards;
 }
 
 .home-heading-animated {
@@ -41,7 +41,7 @@
 }
 
 .links-animated {
-	animation: 0.6s $ease-out-quad links-animation forwards;
+	animation: 0.6s $ease-out-quad home-links-animation forwards;
 }
 
 .heading-push-back {

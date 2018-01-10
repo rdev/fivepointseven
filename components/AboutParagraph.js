@@ -1,36 +1,12 @@
-import autobind from 'autobind-decorator';
-import { TweenMax, Power2, TimelineMax } from 'gsap';
+import { sleep, addClass } from '../lib/utils';
 
-@autobind
 export default class AboutParagraph extends React.Component {
-	showFrameworksModal(e) {
+	static async showFrameworksModal(e) {
 		e.preventDefault();
 
-		document.getElementById('frameworks-modal').style.display = 'grid';
-
-		this.timeline = new TimelineMax({ duration: 1 })
-			.add(TweenMax.to('#about-container', 0.7, {
-				opacity: 0.5,
-				scale: 0.8,
-				force3D: true,
-				ease: Power2.easeInOut,
-			}))
-			.add(
-				TweenMax.to('#frameworks-modal', 0.3, {
-					opacity: 1,
-					force3D: true,
-					ease: Power2.easeOut,
-				}),
-				0.4,
-			)
-			.add(
-				TweenMax.to('#frameworks-modal', 0.6, {
-					scale: 1,
-					force3D: true,
-					ease: Power2.easeOut,
-				}),
-				0.4,
-			);
+		addClass('about-container', 'fold-paragraph');
+		await sleep(0.2);
+		addClass('frameworks-modal', 'frameworks-modal-in');
 	}
 
 	render() {
@@ -56,7 +32,7 @@ export default class AboutParagraph extends React.Component {
 					<a
 						className="inline-link"
 						href="/about/frameworks"
-						onClick={this.showFrameworksModal}
+						onClick={AboutParagraph.showFrameworksModal}
 					>
 						frameworks
 					</a>{' '}

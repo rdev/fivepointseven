@@ -3,7 +3,7 @@
 /* ======================================== */
 
 /* ======== Compass Reveal ======== */
-@keyframes compass-animation {
+@keyframes home-compass-animation {
 	from {
 		transform: rotate(-45deg);
 		opacity: 0;
@@ -31,7 +31,7 @@
 }
 
 /* ======== Links Reveal ======== */
-@keyframes links-animation {
+@keyframes home-links-animation {
 	0% {
 		opacity: 0;
 	}

@@ -26,7 +26,6 @@
 		"autobind-decorator": "^2.1.0",
 		"compression": "^1.7.1",
 		"express": "^4.16.2",
-		"gsap": "^1.20.3",
 		"next": "^4.2.1",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0"

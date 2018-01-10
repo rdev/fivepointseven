@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { TimelineMax } from 'gsap';
 import Logo from '../components/Logo';
 import AboutParagraph from '../components/AboutParagraph';
 import Links from '../components/Links';
