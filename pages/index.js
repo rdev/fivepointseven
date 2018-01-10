@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Router from 'next/router';
-import { TweenMax, Power2, TimelineMax } from 'gsap';
+import { sleep } from '../lib/utils';
 import { greeting, log } from '../lib/log';
 import initServiceWorker from '../lib/service-worker';
 import HomeWelcome from '../components/HomeWelcome';
@@ -9,42 +9,25 @@ import AboutParagraph from '../components/AboutParagraph';
 import stylesheet from '../styles/styles.scss';
 
 export default class MainPage extends React.Component {
+	state = {
+		animationDone: false,
+	};
+
 	async componentDidMount() {
 		greeting();
 		Router.prefetch('/about');
 
-		log("Okay, let's spin the animations.");
-		// Only do this on home page. I don't want to be too obnoxious with loading animations
-		this.timeline = new TimelineMax({ duration: 2 })
-			.add(
-				TweenMax.to('#compass', 1, {
-					transform: 'rotate(0deg)',
-					opacity: 1,
-					force3D: true,
-					ease: Power2.easeOut,
-				}),
-				0,
-			)
-			.add(
-				TweenMax.to('#home-heading', 0.6, {
-					opacity: 1,
-					scale: 1,
-					force3D: true,
-					ease: Power2.easeOut,
-				}),
-				0,
-			)
-			.add(
-				TweenMax.to('#links', 1, {
-					opacity: 1,
-					force3D: true,
-					ease: Power2.easeOut,
-				}),
-				0.5,
-			);
-
-		// Alright, let's get to service worker goodness
+		// Let's get to service worker goodness
 		initServiceWorker();
+
+		this.waitForAnimations();
+	}
+
+	async waitForAnimations() {
+		await sleep(1);
+		this.setState({
+			animationDone: true,
+		});
 	}
 
 	render() {
@@ -70,8 +53,8 @@ export default class MainPage extends React.Component {
 					/>
 				</Head>
 				<div className="home-container">
-					<HomeWelcome />
-					<Links active="hello" />
+					<HomeWelcome animated />
+					<Links active="hello" animated={!this.state.animationDone} />
 					<AboutParagraph />
 				</div>
 			</div>

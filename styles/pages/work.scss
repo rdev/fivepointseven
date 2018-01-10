@@ -1,0 +1,15 @@
+.work-box {
+	position: fixed;
+	height: 80vh;
+	width: 130vh;
+	left: calc((100vw - 130vh) / 2);
+	top: 5vh;
+	background: $bg-color;
+	box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+	transition: $transition;
+
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 7fr 3fr;
+	grid-template-areas: 'left right';
+}

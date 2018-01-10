@@ -6,25 +6,21 @@ import Links from '../components/Links';
 import FrameworksModal from '../components/FrameworksModal';
 import stylesheet from '../styles/styles.scss';
 
-export default class AboutPage extends React.Component {
-	componentDidMount() {
-		document.body.classList.add('about-page');
-	}
-
-	render() {
-		return (
-			<div>
-				<Head>
-					<title>Max Rovensky | About Me</title>
-					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-				</Head>
-				<div className="about-container" id="about-container">
-					<Logo />
-					<AboutParagraph />
-					<Links active="about" />
-				</div>
-				<FrameworksModal />
+const AboutPage = () => (
+	<div>
+		<Head>
+			<title>Max Rovensky | About Me</title>
+			<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+		</Head>
+		<div className="about-wrapper" id="about-wrapper">
+			<div className="about-container" id="about-container">
+				<Logo />
+				<AboutParagraph />
+				<Links active="about" />
 			</div>
-		);
-	}
-}
+		</div>
+		<FrameworksModal />
+	</div>
+);
+
+export default AboutPage;

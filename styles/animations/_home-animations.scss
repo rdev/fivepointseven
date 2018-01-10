@@ -1,0 +1,44 @@
+/* ======================================== */
+/*           HOME PAGE ANIMATIONS           */
+/* ======================================== */
+
+/* ======== Compass Reveal ======== */
+@keyframes compass-animation {
+	from {
+		transform: rotate(-45deg);
+		opacity: 0;
+	}
+	to {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+
+/* ======== Home Heading Reveal ======== */
+@keyframes home-heading-animation {
+	0% {
+		opacity: 0;
+		transform: scale(1.1);
+	}
+	30% {
+		opacity: 0;
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* ======== Links Reveal ======== */
+@keyframes links-animation {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

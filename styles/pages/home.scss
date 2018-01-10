@@ -1,0 +1,58 @@
+.home-welcome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-area: primary;
+}
+
+.home-heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-area: primary;
+	transition: $transition;
+	h1,
+	h2 {
+		font-family: $base-font-family;
+		padding-bottom: 10px;
+		margin: 0;
+	}
+	h1 {
+		font-size: 3.2rem;
+		font-weight: 100;
+	}
+	h2 {
+		font-size: 2.2rem;
+		color: $gray;
+		font-weight: 300;
+	}
+}
+
+/* =============== ANIMATION CLASSES =============== */
+
+.compass-animated {
+	animation: 0.6s $ease-out-quad compass-animation forwards;
+}
+
+.home-heading-animated {
+	animation: 0.85s $ease-out-quad home-heading-animation forwards;
+}
+
+.links-animated {
+	animation: 0.6s $ease-out-quad links-animation forwards;
+}
+
+.heading-push-back {
+	animation: 0.6s $ease-in-out-quad heading-push-back forwards;
+}
+
+.compass-push-up {
+	animation: 1s $ease-out-quad compass-push-up forwards;
+}
+
+.home-about-fadein {
+	display: flex;
+	animation: 1s $ease-out-quad about-fade-in forwards;
+}

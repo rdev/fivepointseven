@@ -1,0 +1,36 @@
+/* ======================================== */
+/*            UTILITY ANIMATIONS            */
+/* ======================================== */
+
+/* ======== Home > About transitions ======== */
+
+@keyframes heading-push-back {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+}
+
+@keyframes compass-push-up {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-150px);
+	}
+}
+
+@keyframes about-fade-in {
+	0% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
