@@ -127,6 +127,7 @@
 	height: 20px;
 	cursor: pointer;
 	transition: $transition;
+	outline: none;
 
 	&:hover {
 		opacity: 1;
@@ -172,15 +173,13 @@
 			height: 10%;
 			background: $text;
 			content: '';
-			-webkit-transition: -webkit-transform 0.3s;
 			transition: transform 0.3s;
-			-webkit-transform: scaleY(0.618) translateX(-100%);
-			transform: scaleY(0.618) translateX(-100%);
+			transform: translateX(-102%);
 		}
 
 		&:hover:before,
 		&.selected:before {
-			transform: scaleY(0.618) translateX(0);
+			transform: translateX(0);
 		}
 	}
 
@@ -260,7 +259,7 @@
 /* =============== ANIMATION CLASSES =============== */
 
 .fold-paragraph {
-	animation: 0.7s $ease-in-out-quad about-fold-paragraph forwards;
+	animation: 0.7s $ease-out-quad about-fold-paragraph forwards;
 }
 
 .unfold-paragraph {

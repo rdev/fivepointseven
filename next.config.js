@@ -47,8 +47,17 @@ module.exports = {
 				},
 			],
 			dynamicUrlToDependencies: {
-				'/': ['pages/index.js'],
-				'/about': ['pages/about.js'],
+				'/': ['pages/index.js', 'components/home-page/HomeWelcome.js'],
+				'/about': [
+					'pages/about.js',
+					'components/about-page/AboutParagraph.js',
+					'components/about-page/FrameworksModal.js',
+				],
+				'/work': [
+					'pages/work.js',
+					'components/work-page/ProjectBrief.js',
+					'components/work-page/ProjectList.js',
+				],
 			},
 		}));
 

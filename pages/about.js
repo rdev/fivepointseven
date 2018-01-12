@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Logo from '../components/Logo';
-import AboutParagraph from '../components/AboutParagraph';
+import AboutParagraph from '../components/about-page/AboutParagraph';
 import Links from '../components/Links';
-import FrameworksModal from '../components/FrameworksModal';
+import FrameworksModal from '../components/about-page/FrameworksModal';
 import stylesheet from '../styles/styles.scss';
 
 const AboutPage = () => (

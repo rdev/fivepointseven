@@ -1,4 +1,4 @@
-import { sleep, addClass } from '../lib/utils';
+import { sleep, addClass } from '../../lib/utils';
 
 export default class AboutParagraph extends React.Component {
 	static async showFrameworksModal(e) {

@@ -1,4 +1,4 @@
-import Logo from './Logo';
+import Logo from '../Logo';
 
 const HomeWelcome = ({ animated }) => (
 	<div className="home-welcome" id="home-welcome">

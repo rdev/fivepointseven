@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Router from 'next/router';
 import { sleep } from '../lib/utils';
-import { greeting, log } from '../lib/log';
+import { greeting } from '../lib/log';
 import initServiceWorker from '../lib/service-worker';
-import HomeWelcome from '../components/HomeWelcome';
+import HomeWelcome from '../components/home-page/HomeWelcome';
 import Links from '../components/Links';
-import AboutParagraph from '../components/AboutParagraph';
+import AboutParagraph from '../components/about-page/AboutParagraph';
 import stylesheet from '../styles/styles.scss';
 
 export default class MainPage extends React.Component {

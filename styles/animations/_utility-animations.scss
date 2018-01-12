@@ -2,7 +2,17 @@
 /*            UTILITY ANIMATIONS            */
 /* ======================================== */
 
-/* ======== Links fade animations ======== */
+/* ======== Generic animations ======== */
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
 
 /* ======== Home > About transitions ======== */
 

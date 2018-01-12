@@ -1,0 +1,9 @@
+.contact-form {
+	grid-area: primary;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-content: space-around;
+}

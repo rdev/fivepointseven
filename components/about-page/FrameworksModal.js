@@ -1,6 +1,6 @@
 import autobind from 'autobind-decorator';
-import { sleep, addClass, removeClass } from '../lib/utils';
-import frameworks from '../lib/frameworks-and-tools';
+import { sleep, addClass, removeClass } from '../../lib/utils';
+import frameworks from '../../lib/frameworks-and-tools';
 
 @autobind
 export default class FrameworksModal extends React.Component {
