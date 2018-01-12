@@ -33,7 +33,7 @@
 	"devDependencies": {
 		"autoprefixer": "^7.2.4",
 		"babel-eslint": "^8.2.1",
-		"babel-plugin-transform-decorators-legacy": "^1.3.4",
+		"babel-preset-vave": "^0.3.0",
 		"eslint": "^4.15.0",
 		"eslint-config-airbnb": "^16.1.0",
 		"eslint-config-vave": "^0.4.0",
@@ -68,5 +68,8 @@
 			"react/no-danger": "off",
 			"security/detect-object-injection": "off"
 		}
+	},
+	"babel": {
+		"presets": ["next/babel", "vave"]
 	}
 }
