@@ -24,9 +24,14 @@
 	},
 	"dependencies": {
 		"autobind-decorator": "^2.1.0",
+		"body-parser": "^1.18.2",
+		"common-tags": "^1.7.2",
 		"compression": "^1.7.1",
+		"email-validator": "^1.1.1",
 		"express": "^4.16.2",
 		"next": "^4.2.1",
+		"node-telegram-bot-api": "^0.30.0",
+		"node-where": "^1.1.0",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0"
 	},
@@ -70,6 +75,6 @@
 		}
 	},
 	"babel": {
-		"presets": ["next/babel", "vave"]
+		"presets": ["vave", "next/babel"]
 	}
 }
