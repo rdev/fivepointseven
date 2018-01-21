@@ -9,7 +9,7 @@ export default class ProjectBrief extends React.Component {
 		addClass('work-box', 'transitioning');
 		await sleep(1.25);
 
-		Router.push(`/work/${this.props.project.slug}`);
+		// Router.push(`/work/${this.props.project.slug}`);
 	}
 
 	render() {
@@ -20,8 +20,16 @@ export default class ProjectBrief extends React.Component {
 				style={{
 					backgroundColor: `rgb(${hexToRgb(project.color)})`,
 					backgroundSize: 'cover', // @TODO IMG TAG
+					position: 'relative',
 				}}
 			>
+				<div
+					className="work-box-project-image"
+					id="work-box-project-image"
+					style={{
+						backgroundImage: `url(${project.image})`,
+					}}
+				/>
 				<div id="work-box-project-info" className="work-box-project-info">
 					<div className="brief">
 						<h2>

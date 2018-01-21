@@ -16,12 +16,13 @@ export default class WorkPage extends React.Component {
 
 	async selectItem(selectedProject) {
 		addClass('work-box-project-info', 'framework-selection-progress');
-
+		addClass('work-box-project-image', 'cross-disolve');
 		await sleep(0.3);
 		this.setState({ selectedProject }); // No need to trippledot the only item
 
 		await sleep(0.4);
 		removeClass('work-box-project-info', 'framework-selection-progress');
+		removeClass('work-box-project-image', 'cross-disolve');
 	}
 
 	render() {
