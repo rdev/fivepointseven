@@ -1,6 +1,6 @@
 const ProjectList = ({ selectedProject, portfolioItems, selectItem }) => (
 	<div className="work-box-list">
-		<h2>the things i made</h2>
+		<h2>the things i built</h2>
 		{portfolioItems.map(item => (
 			<div key={item.name}>
 				<a

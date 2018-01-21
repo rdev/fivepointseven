@@ -1,32 +1,29 @@
 import Head from 'next/head';
 import Router from 'next/router';
-import { sleep } from '../lib/utils';
-import { greeting } from '../lib/log';
 import initServiceWorker from '../lib/service-worker';
+import Keen from '../lib/keen';
 import HomeWelcome from '../components/home-page/HomeWelcome';
 import Links from '../components/Links';
-import AboutParagraph from '../components/about-page/AboutParagraph';
 import stylesheet from '../styles/styles.scss';
 
 export default class MainPage extends React.Component {
 	state = {
-		animationDone: false,
+		disableSpin: false,
 	};
 
 	async componentDidMount() {
-		greeting();
-		Router.prefetch('/about');
+		this.setSpin();
 
 		// Let's get to service worker goodness
 		initServiceWorker();
 
-		this.waitForAnimations();
+		// Let's do them alanytics
+		Keen.recordEvent('pageviews', {});
 	}
 
-	async waitForAnimations() {
-		await sleep(1);
+	setSpin() {
 		this.setState({
-			animationDone: true,
+			disableSpin: Router.query.nospin,
 		});
 	}
 
@@ -53,9 +50,8 @@ export default class MainPage extends React.Component {
 					/>
 				</Head>
 				<div className="home-container">
-					<HomeWelcome animated />
-					<Links active="hello" animated={!this.state.animationDone} />
-					<AboutParagraph />
+					<HomeWelcome animated={!this.state.disableSpin} />
+					<Links active="hello" />
 				</div>
 			</div>
 		);

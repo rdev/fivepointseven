@@ -13,6 +13,16 @@
 	}
 }
 
+@keyframes about-image-hide {
+	from {
+		opacity: 0.14;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 /* ======== Minimize Paragraph ======== */
 @keyframes about-fold-paragraph {
 	from {

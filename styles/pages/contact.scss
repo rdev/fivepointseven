@@ -1,20 +1,111 @@
+.contact-container .compass {
+	align-self: center;
+	transform: translateY(-23vh);
+	width: 58px;
+	left: calc(50vw - 29px);
+}
+
 .contact-form {
 	grid-area: primary;
 	height: 100%;
+	width: 70%;
+	margin-top: 20px;
+	justify-self: center;
+	opacity: 0;
+	animation: 1s $ease-out-quad contact-form-fade-in forwards;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+
+	input,
+	textarea {
+		font-family: $base-font-family;
+		font-weight: 300;
+		background-color: transparent;
+		outline: 0;
+		border: 0;
+		border-bottom: 1px solid $form-field-inactive;
+		font-size: 2.2rem;
+		color: $text;
+		transition: $transition;
+		@include padding-vertical(4px);
+
+		&:active,
+		&:focus {
+			border-bottom: 1px solid $text;
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: 24px;
+		padding-top: 96px;
+
+		&:active,
+		&:focus,
+		&:not(:placeholder-shown) {
+			// 👆🏻 Does this count as dirty?
+			height: 120px;
+			padding-top: 0;
+		}
+	}
+
+	button {
+		font-family: $base-font-family;
+		color: $text;
+		outline: 0;
+		font-size: 2.6rem;
+		border: 0;
+		background: transparent;
+		align-self: flex-end;
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	span {
+		font-size: 1.1em;
+		opacity: 0;
+		transition: $transition;
+		color: $form-field-error;
+	}
+
+	input.error,
+	textarea.error {
+		border-bottom: 1px solid $form-field-error;
+	}
+
+	span.error {
+		opacity: 1;
+	}
+}
+
+.form-success-checkmark {
+	grid-area: primary;
+	display: none;
+	height: 300px;
+	width: 300px;
+	justify-self: center;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
 }
 
 .them-links {
-	width: 50%;
+	width: 60%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-self: center;
+	opacity: 0;
+	animation: 0.5s $ease-out-quad fade-in forwards 0.8s;
 
 	img {
-		height: 28px;
+		height: 24px;
 	}
 
 	a {
@@ -25,4 +116,57 @@
 			opacity: 0.7;
 		}
 	}
+}
+
+.error-message {
+	position: fixed;
+	width: 50vw;
+	text-align: center;
+	font-weight: 400;
+	-webkit-font-smoothing: subpixel-antialiased;
+	bottom: 40px;
+	left: 25vw;
+	background: $form-error;
+	padding: 20px;
+	border-radius: 6px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	z-index: 5;
+
+	transform: translateY(40px);
+	opacity: 0;
+	visibility: hidden;
+
+	&.visible {
+		visibility: visible;
+		animation: 0.5s $ease-in-out-quad error-fade-up forwards;
+	}
+}
+
+/* =============== ANIMATION CLASSES =============== */
+
+.contact-form-push-back {
+	animation: 0.6s $ease-in-out-quad push-back forwards;
+}
+
+.contact-checkmark-fade-in {
+	display: flex;
+	animation: 0.4s $ease-in-out-quad contact-checkmark-fade-in forwards;
+	animation-delay: 0.3s;
+}
+
+.error-message.hiding {
+	visibility: visible;
+	animation: 0.5s $ease-in-out-quad error-fade-down forwards;
+}
+
+.compass-push-contact-about {
+	animation: 0.7s $ease-out-quad compass-push-contact-about forwards;
+}
+
+.compass-push-work-contact {
+	animation: 0.7s $ease-out-quad compass-push-work-contact forwards 0.1s;
+}
+
+.push-back {
+	animation: 0.6s $ease-in-out-quad push-back forwards;
 }

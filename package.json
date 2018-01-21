@@ -6,9 +6,8 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"install": "prettier --write package.json",
 		"start": "next start",
-		"start-sw": "NODE_ENV=production node server.js",
+		"production": "node server.js",
 		"export": "next export",
 		"prettier": "prettier './**/*.js' './**/*.json' './**/*.scss' --write",
 		"eslint": "eslint './**/*.js' --format=pretty --fix",
@@ -27,8 +26,10 @@
 		"body-parser": "^1.18.2",
 		"common-tags": "^1.7.2",
 		"compression": "^1.7.1",
+		"dotenv": "^4.0.0",
 		"email-validator": "^1.1.1",
 		"express": "^4.16.2",
+		"keen-tracking": "^1.4.0",
 		"next": "^4.2.1",
 		"node-telegram-bot-api": "^0.30.0",
 		"node-where": "^1.1.0",
@@ -75,6 +76,14 @@
 		}
 	},
 	"babel": {
-		"presets": ["vave", "next/babel"]
+		"presets": ["next/babel", "vave"]
+	},
+	"config": {
+		"dockerpuller": {
+			"host": "https://missioncontrol.fivepointseven.com/docker",
+			"image": "fivepointseven/fivepointseven",
+			"name": "fivepointseven",
+			"ports": "3000:3000"
+		}
 	}
 }

@@ -35,7 +35,7 @@ export default class FrameworksModal extends React.Component {
 		return (
 			<div className="frameworks-modal" id="frameworks-modal">
 				<div className="frameworks-modal-left-pane">
-					<h2>frameworks and tools</h2>
+					<h2>the things i know</h2>
 
 					{Object.keys(frameworks).map(item => (
 						<div key={item}>

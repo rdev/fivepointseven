@@ -105,6 +105,10 @@ div[class*='container'] {
 	align-items: center;
 	grid-area: links;
 	width: 280px;
+
+	&.hidden {
+		display: none;
+	}
 }
 
 .links a {
@@ -117,14 +121,21 @@ div[class*='container'] {
 	font-size: 2.2rem;
 	text-decoration: none;
 	color: $text;
+
 	&:hover {
 		transform: scale(0.95);
 	}
+
 	&:active {
 		transform: scale(0.9);
 		opacity: 0.75;
 	}
 }
 
-.heading-push-back {
+.error-page-message {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

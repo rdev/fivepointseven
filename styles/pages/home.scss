@@ -44,15 +44,27 @@
 	animation: 0.6s $ease-out-quad home-links-animation forwards;
 }
 
-.heading-push-back {
-	animation: 0.6s $ease-in-out-quad heading-push-back forwards;
+.compass-push-home-about {
+	animation: 1s $ease-out-quad compass-push-home-about forwards;
 }
 
-.compass-push-up {
-	animation: 1s $ease-out-quad compass-push-up forwards;
+.compass-push-about-home {
+	animation: 1s $ease-out-quad compass-push-about-home forwards 0.2s;
 }
 
-.home-about-fadein {
+.compass-push-home-contact {
+	animation: 0.8s $ease-out-quad compass-push-home-contact forwards;
+}
+
+.compass-push-contact-home {
+	animation: 0.8s $ease-out-quad compass-push-contact-home forwards 0.4s;
+}
+
+.compass-push-about-contact {
+	animation: 0.8s $ease-out-quad compass-push-about-contact forwards;
+}
+
+.scale-fade-in {
 	display: flex;
-	animation: 1s $ease-out-quad about-fade-in forwards;
+	animation: 1s $ease-out-quad scale-fade-in forwards;
 }

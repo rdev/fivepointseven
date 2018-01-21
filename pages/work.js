@@ -4,6 +4,7 @@ import stylesheet from '../styles/styles.scss';
 import Links from '../components/Links';
 import ProjectBrief from '../components/work-page/ProjectBrief';
 import ProjectList from '../components/work-page/ProjectList';
+import Logo from '../components/Logo';
 import portfolioItems from '../lib/portfolio-items';
 import { sleep, addClass, removeClass } from '../lib/utils';
 
@@ -32,6 +33,7 @@ export default class WorkPage extends React.Component {
 					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
 				</Head>
 				<div className="work-container">
+					<Logo />
 					<div className="work-box" id="work-box">
 						<ProjectBrief project={project} />
 						<ProjectList

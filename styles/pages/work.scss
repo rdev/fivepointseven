@@ -1,3 +1,11 @@
+.work-container .compass {
+	align-self: center;
+	transform: translateY(-150px);
+	width: 58px;
+	left: calc(50vw - 29px);
+	opacity: 0;
+}
+
 .work-box {
 	position: fixed;
 	overflow: hidden;
@@ -8,6 +16,7 @@
 	background: $bg-color;
 	box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
 	transition: $transition;
+	animation: 0.6s $ease-out-quad scale-fade-in forwards;
 
 	display: grid;
 	grid-template-rows: 1fr;
@@ -148,4 +157,16 @@
 
 .project-selection-progress {
 	animation: 0.6s $ease-in-out-quad select-project forwards;
+}
+
+.fade-in {
+	animation: 0.6s $ease-out-quad fade-in forwards;
+}
+
+.compass-fade-in {
+	animation: 0.6s $ease-out-quad fade-in forwards 0.2s;
+}
+
+.fade-out {
+	animation: 0.6s $ease-out-quad fade-out forwards;
 }

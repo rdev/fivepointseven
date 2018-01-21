@@ -14,9 +14,19 @@
 	}
 }
 
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
 /* ======== Home > About transitions ======== */
 
-@keyframes heading-push-back {
+@keyframes push-back {
 	0% {
 		transform: scale(1);
 		opacity: 1;
@@ -27,7 +37,18 @@
 	}
 }
 
-@keyframes compass-push-up {
+@keyframes push-forward {
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes compass-push-home-about {
 	0% {
 		transform: translateY(0);
 	}
@@ -36,7 +57,67 @@
 	}
 }
 
-@keyframes about-fade-in {
+@keyframes compass-push-about-home {
+	0% {
+		transform: translateY(-150px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes compass-push-contact-about {
+	0% {
+		transform: translateY(-23vh);
+	}
+	100% {
+		transform: translateY(-150px);
+	}
+}
+
+@keyframes compass-push-contact-home {
+	0% {
+		transform: translateY(-23vh);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes compass-push-home-contact {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-23vh);
+	}
+}
+
+@keyframes compass-push-about-contact {
+	0% {
+		transform: translateY(-150px);
+	}
+	100% {
+		transform: translateY(-23vh);
+	}
+}
+
+@keyframes compass-push-work-contact {
+	0% {
+		transform: translateY(-150px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-23vh);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(-23vh);
+		opacity: 1;
+	}
+}
+
+@keyframes scale-fade-in {
 	0% {
 		transform: scale(1.2);
 		opacity: 0;
