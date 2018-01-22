@@ -21,6 +21,7 @@ export default class ContactForm extends React.Component {
 		});
 
 		if (contactErrors.length === 0) {
+			// @TODO Error handling
 			const res = await fetch('/contact', {
 				headers: {
 					Accept: 'application/json',

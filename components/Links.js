@@ -1,7 +1,13 @@
 import Router from 'next/router';
 import autobind from 'autobind-decorator';
 import { sleep, addClass } from '../lib/utils';
+import Keen from '../lib/keen';
 import { greeting } from '../lib/log';
+
+Router.onAppUpdated = (nextUrl) => {
+	// persist the local state
+	window.location.href = nextUrl;
+};
 
 @autobind
 export default class Links extends React.Component {
@@ -17,14 +23,19 @@ export default class Links extends React.Component {
 		Router.prefetch('/contact');
 		this.setLinksClass();
 
+		// This component exists on every page, so let's sneak some global things into it
 		greeting();
+
+		Keen.recordEvent('pageviews', {});
 	}
 
 	setLinksClass() {
 		this.setState({
 			...this.state,
 			linksClass:
-				Router.pathname === '/' && !Router.query.nospin ? 'links links-animated' : 'links',
+				Router.pathname === '/' && !Router.query.nospin && !Router.query.noLinksAnimation
+					? 'links links-animated'
+					: 'links',
 		});
 	}
 
@@ -33,6 +44,11 @@ export default class Links extends React.Component {
 
 		this.setState({
 			active: 'about',
+		});
+
+		Keen.recordEvent('page-transitions', {
+			from: Router.pathname,
+			to: '/about',
 		});
 
 		switch (Router.pathname) {
@@ -72,6 +88,11 @@ export default class Links extends React.Component {
 			active: 'work',
 		});
 
+		Keen.recordEvent('page-transitions', {
+			from: Router.pathname,
+			to: '/work',
+		});
+
 		switch (Router.pathname) {
 			case '/':
 				addClass('home-welcome', 'fade-out');
@@ -109,6 +130,11 @@ export default class Links extends React.Component {
 			active: 'contact',
 		});
 
+		Keen.recordEvent('page-transitions', {
+			from: Router.pathname,
+			to: '/contact',
+		});
+
 		switch (Router.pathname) {
 			case '/':
 				addClass('home-heading', 'push-back');
@@ -131,7 +157,7 @@ export default class Links extends React.Component {
 				addClass('work-box', 'push-back');
 				addClass('compass', 'compass-push-work-contact');
 
-				await sleep(0.8);
+				await sleep(0.7);
 
 				Router.push('/contact');
 				break;
@@ -145,6 +171,11 @@ export default class Links extends React.Component {
 
 		this.setState({
 			active: 'hello',
+		});
+
+		Keen.recordEvent('page-transitions', {
+			from: Router.pathname,
+			to: '/about',
 		});
 
 		switch (Router.pathname) {
@@ -162,7 +193,10 @@ export default class Links extends React.Component {
 
 				await sleep(0.8);
 
-				Router.push('/');
+				Router.push(
+					{ pathname: '/', query: { noLinksAnimation: true } },
+					{ pathname: '/' },
+				);
 				break;
 			case '/contact':
 				addClass('compass', 'compass-push-contact-home');

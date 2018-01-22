@@ -7,9 +7,10 @@ export default class ProjectBrief extends React.Component {
 	async goToProject(e) {
 		e.preventDefault();
 		addClass('work-box', 'transitioning');
+		addClass('links', 'fade-out');
 		await sleep(1.25);
 
-		// Router.push(`/work/${this.props.project.slug}`);
+		Router.push(`/work/${this.props.project.slug}`);
 	}
 
 	render() {

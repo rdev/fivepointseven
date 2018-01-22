@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Router from 'next/router';
 import initServiceWorker from '../lib/service-worker';
-import Keen from '../lib/keen';
 import HomeWelcome from '../components/home-page/HomeWelcome';
 import Links from '../components/Links';
 import stylesheet from '../styles/styles.scss';
@@ -16,9 +15,6 @@ export default class MainPage extends React.Component {
 
 		// Let's get to service worker goodness
 		initServiceWorker();
-
-		// Let's do them alanytics
-		Keen.recordEvent('pageviews', {});
 	}
 
 	setSpin() {
