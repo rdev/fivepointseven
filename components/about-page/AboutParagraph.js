@@ -32,7 +32,7 @@ export default class AboutParagraph extends React.Component {
 				</span>
 				<br />
 				<span>
-					Anyway, today my field of knowledhe includes Node, React, React Native, Docker
+					Anyway, today my field of knowledge includes Node, React, React Native, Docker
 					and all the things that go with it. Question. Do I really need to list all the{' '}
 					<a
 						className="inline-link"

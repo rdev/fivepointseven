@@ -3,6 +3,7 @@ import autobind from 'autobind-decorator';
 import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting } from '../lib/log';
+import MobileMenu from './MobileMenu';
 
 Router.onAppUpdated = (nextUrl) => {
 	// persist the local state
@@ -213,39 +214,42 @@ export default class Links extends React.Component {
 
 	render() {
 		return (
-			<div className={this.state.linksClass} id="links">
-				<a
-					id="hello-link"
-					style={{ opacity: this.state.active === 'hello' ? 1 : 0.5 }}
-					href="/"
-					onClick={this.goToMain}
-				>
-					hello
-				</a>
-				<a
-					id="about-link"
-					style={{ opacity: this.state.active === 'about' ? 1 : 0.5 }}
-					href="/about"
-					onClick={this.goToAbout}
-				>
-					about
-				</a>
-				<a
-					id="work-link"
-					style={{ opacity: this.state.active === 'work' ? 1 : 0.5 }}
-					href="/work"
-					onClick={this.goToWork}
-				>
-					work
-				</a>
-				<a
-					id="contact-link"
-					style={{ opacity: this.state.active === 'contact' ? 1 : 0.5 }}
-					href="/contact"
-					onClick={this.goToContact}
-				>
-					contact
-				</a>
+			<div className="navigation">
+				<MobileMenu />
+				<div className={this.state.linksClass} id="links">
+					<a
+						id="hello-link"
+						style={{ opacity: this.state.active === 'hello' ? 1 : 0.5 }}
+						href="/"
+						onClick={this.goToMain}
+					>
+						hello
+					</a>
+					<a
+						id="about-link"
+						style={{ opacity: this.state.active === 'about' ? 1 : 0.5 }}
+						href="/about"
+						onClick={this.goToAbout}
+					>
+						about
+					</a>
+					<a
+						id="work-link"
+						style={{ opacity: this.state.active === 'work' ? 1 : 0.5 }}
+						href="/work"
+						onClick={this.goToWork}
+					>
+						work
+					</a>
+					<a
+						id="contact-link"
+						style={{ opacity: this.state.active === 'contact' ? 1 : 0.5 }}
+						href="/contact"
+						onClick={this.goToContact}
+					>
+						contact
+					</a>
+				</div>
 			</div>
 		);
 	}
