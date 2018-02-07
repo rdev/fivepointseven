@@ -3,7 +3,6 @@ import autobind from 'autobind-decorator';
 import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting } from '../lib/log';
-import MobileMenu from './MobileMenu';
 
 Router.onAppUpdated = (nextUrl) => {
 	// persist the local state
@@ -26,6 +25,21 @@ export default class Links extends React.Component {
 
 		// This component exists on every page, so let's sneak some global things into it
 		greeting();
+
+		const isSafari = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
+		const isIPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+		if (isSafari && isIPhone) {
+			document.querySelector("div[class*='container']").style.height = '80vh';
+
+			if (Router.pathname === '/about') {
+				document.getElementById('frameworks-modal').style.height = '70vh';
+			}
+
+			if (Router.pathname === '/work') {
+				document.getElementById('work-box').style.height = '62vh';
+			}
+		}
 
 		Keen.recordEvent('pageviews', {});
 	}
@@ -215,7 +229,6 @@ export default class Links extends React.Component {
 	render() {
 		return (
 			<div className="navigation">
-				<MobileMenu />
 				<div className={this.state.linksClass} id="links">
 					<a
 						id="hello-link"

@@ -1,0 +1,70 @@
+@media only screen and (max-device-width: 667px) {
+	@keyframes compass-push-home-about {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-100px);
+		}
+	}
+
+	@keyframes compass-push-about-home {
+		0% {
+			transform: translateY(-100px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes compass-push-contact-about {
+		0% {
+			transform: translateY(-5vh);
+		}
+		100% {
+			transform: translateY(-100px);
+		}
+	}
+
+	@keyframes compass-push-contact-home {
+		0% {
+			transform: translateY(-5vh);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes compass-push-home-contact {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-5vh);
+		}
+	}
+
+	@keyframes compass-push-about-contact {
+		0% {
+			transform: translateY(-100px);
+		}
+		100% {
+			transform: translateY(-5vh);
+		}
+	}
+
+	@keyframes compass-push-work-contact {
+		0% {
+			transform: translateY(-100px);
+			opacity: 0;
+		}
+		1% {
+			transform: translateY(-5vh);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(-5vh);
+			opacity: 1;
+		}
+	}
+}

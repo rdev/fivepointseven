@@ -20,6 +20,10 @@
 
 	input,
 	textarea {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
 		font-family: $base-font-family;
 		font-weight: 300;
 		background-color: transparent;

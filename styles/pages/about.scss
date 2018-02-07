@@ -43,7 +43,8 @@
 
 .about-container {
 	.about-paragraph {
-		display: flex;
+		display: block;
+		align-self: center;
 	}
 
 	.compass {

@@ -24,12 +24,14 @@ export default class AboutParagraph extends React.Component {
 					{/* No, you're doing it because of the user research, you fucking liar. */}
 				</span>
 				<br />
+				<br />
 				<span>
 					I’m {myYears} years old, first began coding at 17 and after trying out a few
 					languages, I’ve decided to settle on JavaScript and started with Node as I found
 					it more exciting than the front-end at the time. First version of Node I’ve
-					worked with was v0.10.2. Man, that was {nodeYears} years ago, damn!.
+					worked with was v0.10.2. Man, that was {nodeYears} years ago, damn!
 				</span>
+				<br />
 				<br />
 				<span>
 					Anyway, today my field of knowledge includes Node, React, React Native, Docker
