@@ -58,3 +58,13 @@
 		opacity: 0;
 	}
 }
+
+@keyframes fade-in-project-image {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 0.1;
+	}
+}

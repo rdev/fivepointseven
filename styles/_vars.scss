@@ -14,9 +14,21 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'fivepointseven-mono';
+	src: local('Source Code Pro Light'), local('SourceCodePro-Light'),
+		url('/static/font-monospace.woff2') format('woff2');
+	font-weight: 100;
+	font-style: normal;
+	unicode-range: U+0000-00ff, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da, U+02dc,
+		U+2000-206f, U+2074, U+20ac, U+2122, U+2212, U+2215;
+}
+
 // Excessive pretty fallbacks for all OSes to not block rendering by webfonts
 $base-font-family: 'fivepointseven', 'Avenir', -apple-system, BlinkMacSystemFont, wf_segoe-ui_light,
 	wf_segoe-ui_normal, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$mono-font-family: 'fivepointseven-mono', 'Menlo', 'Monaco', monospace, monospace;
 
 $transition: all 0.2s ease;
 
