@@ -29,6 +29,8 @@ export default class Links extends React.Component {
 		const isSafari = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
 		const isIPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
+		// Reeeeally not a fan of this, I think this approach is butt ugly
+		// But other approaches are even buttier and uglier
 		if (isSafari && isIPhone) {
 			document.querySelector("div[class*='container']").style.height = '80vh';
 
@@ -228,42 +230,64 @@ export default class Links extends React.Component {
 
 	render() {
 		return (
-			<div className="navigation">
-				<div className={this.state.linksClass} id="links">
-					<a
-						id="hello-link"
-						style={{ opacity: this.state.active === 'hello' ? 1 : 0.5 }}
-						href="/"
-						onClick={this.goToMain}
-					>
-						hello
-					</a>
-					<a
-						id="about-link"
-						style={{ opacity: this.state.active === 'about' ? 1 : 0.5 }}
-						href="/about"
-						onClick={this.goToAbout}
-					>
-						about
-					</a>
-					<a
-						id="work-link"
-						style={{ opacity: this.state.active === 'work' ? 1 : 0.5 }}
-						href="/work"
-						onClick={this.goToWork}
-					>
-						work
-					</a>
-					<a
-						id="contact-link"
-						style={{ opacity: this.state.active === 'contact' ? 1 : 0.5 }}
-						href="/contact"
-						onClick={this.goToContact}
-					>
-						contact
-					</a>
+			<React.Fragment>
+				<div className="navigation">
+					<div className={this.state.linksClass} id="links">
+						<a
+							id="hello-link"
+							style={{ opacity: this.state.active === 'hello' ? 1 : 0.5 }}
+							href="/"
+							onClick={this.goToMain}
+						>
+							hello
+						</a>
+						<a
+							id="about-link"
+							style={{ opacity: this.state.active === 'about' ? 1 : 0.5 }}
+							href="/about"
+							onClick={this.goToAbout}
+						>
+							about
+						</a>
+						<a
+							id="work-link"
+							style={{ opacity: this.state.active === 'work' ? 1 : 0.5 }}
+							href="/work"
+							onClick={this.goToWork}
+						>
+							work
+						</a>
+						<a
+							id="contact-link"
+							style={{ opacity: this.state.active === 'contact' ? 1 : 0.5 }}
+							href="/contact"
+							onClick={this.goToContact}
+						>
+							contact
+						</a>
+					</div>
 				</div>
-			</div>
+				<div className="no-grid home-heading">
+					<div className="home-heading home-heading-animated" id="home-heading">
+						<h1>Psst. Mate. Your browser is pretty old.</h1>
+						<h2>
+							There{"'"}s nothing wrong with that of course, but this website is built
+							using new and shiny technologies.
+							<br />
+							<br />
+							Please{' '}
+							<a
+								href="https://browsehappy.com/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								update
+							</a>{' '}
+							your browser to enjoy sweet experience.
+						</h2>
+					</div>
+				</div>
+			</React.Fragment>
 		);
 	}
 }
