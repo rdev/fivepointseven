@@ -1,16 +1,11 @@
-import Head from 'next/head';
 import Logo from '../components/Logo';
 import AboutParagraph from '../components/about-page/AboutParagraph';
+import Page from '../components/Page';
 import Links from '../components/Links';
 import FrameworksModal from '../components/about-page/FrameworksModal';
-import stylesheet from '../styles/styles.scss';
 
 const AboutPage = () => (
-	<div>
-		<Head>
-			<title>Max Rovensky | About Me</title>
-			<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-		</Head>
+	<Page title="About">
 		<div className="about-wrapper" id="about-wrapper">
 			<div className="about-container" id="about-container">
 				<Logo />
@@ -19,7 +14,7 @@ const AboutPage = () => (
 			</div>
 		</div>
 		<FrameworksModal />
-	</div>
+	</Page>
 );
 
 export default AboutPage;

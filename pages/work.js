@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import autobind from 'autobind-decorator';
-import stylesheet from '../styles/styles.scss';
+import Page from '../components/Page';
 import Links from '../components/Links';
 import ProjectBrief from '../components/work-page/ProjectBrief';
 import ProjectList from '../components/work-page/ProjectList';
@@ -28,11 +27,7 @@ export default class WorkPage extends React.Component {
 	render() {
 		const project = this.state.selectedProject;
 		return (
-			<div>
-				<Head>
-					<title>Max Rovensky | Portfolio</title>
-					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-				</Head>
+			<Page title="Portfolio">
 				<div className="work-container">
 					<Logo />
 					<div className="work-box" id="work-box">
@@ -45,7 +40,7 @@ export default class WorkPage extends React.Component {
 					</div>
 					<Links active="work" />
 				</div>
-			</div>
+			</Page>
 		);
 	}
 }

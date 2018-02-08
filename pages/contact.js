@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import autobind from 'autobind-decorator';
-import stylesheet from '../styles/styles.scss';
+import Page from '../components/Page';
 import Links from '../components/Links';
 import Logo from '../components/Logo';
 import ContactForm from '../components/contact-page/ContactForm';
@@ -15,11 +14,7 @@ export default class ContactPage extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Head>
-					<title>Max Rovensky | Contact</title>
-					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-				</Head>
+			<Page title="Contact">
 				<div className="contact-container" id="contact-container">
 					<Logo />
 					<ContactForm setSuccess={this.setSuccess} />
@@ -34,7 +29,7 @@ export default class ContactPage extends React.Component {
 
 					<Links active="contact" />
 				</div>
-			</div>
+			</Page>
 		);
 	}
 }

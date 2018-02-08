@@ -161,6 +161,7 @@ export default () => (
 		</section>
 		<section>
 			<h2>What was that about lying to the user?</h2>
+			<img src="/static/work/case-studies/my-website/suspicious.jpg" alt="suspicious" />
 			<p>
 				Yeah, so most of the magic that you see around here is perceived. Let’s break it
 				down, starting from the first thing on the website.
@@ -174,7 +175,9 @@ export default () => (
 					</a>, you’ll see a spinny compass animation. Now, due to the nature of CSS, that
 					compass would spin when you go to that page no matter what, and we don’t want
 					that to happen when transitioning from ”About” and ”Contact” pages. We want
-					compass to just slide into it’s place.
+					compass to just slide into it’s place. So we need to sprinkle some JavaScript on
+					it to take care of this.
+					<br />
 					<br />
 					Next.js makes achieving this incredibly easy. What really happens when you go to
 					root from those two pages, is you don’t go to ”<pre>/</pre>”. You go to ”

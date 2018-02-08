@@ -18,10 +18,10 @@ export default class Links extends React.Component {
 	};
 
 	componentDidMount() {
+		this.setLinksClass();
 		Router.prefetch('/about');
 		Router.prefetch('/work');
 		Router.prefetch('/contact');
-		this.setLinksClass();
 
 		// This component exists on every page, so let's sneak some global things into it
 		greeting();
