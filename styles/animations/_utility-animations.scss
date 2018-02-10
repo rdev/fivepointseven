@@ -127,3 +127,18 @@
 		opacity: 1;
 	}
 }
+@keyframes case-study-mouse {
+	0% {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+}

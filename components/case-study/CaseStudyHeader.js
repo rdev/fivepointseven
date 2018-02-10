@@ -9,6 +9,7 @@ export default ({ project }) => (
 				<h1>{project.name}</h1>
 				<span>{project.brief}</span>
 			</div>
+			<img src="/static/mouse.svg" alt="scroll-down" />
 		</header>
 	</React.Fragment>
 );

@@ -4170,6 +4170,10 @@ hawk@~6.0.2:
     hoek "4.x.x"
     sntp "2.x.x"
 
+highlight.js@^9.11.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -7178,6 +7182,12 @@ react-dom@^16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-highlight@briancappello/react-highlight#react-v16-compiled:
+  version "0.10.0"
+  resolved "https://codeload.github.com/briancappello/react-highlight/tar.gz/ecf53ae1bb03deddb897515e7ed65b9e9f7af65b"
+  dependencies:
+    highlight.js "^9.11.0"
 
 react-hot-loader@3.1.1:
   version "3.1.1"

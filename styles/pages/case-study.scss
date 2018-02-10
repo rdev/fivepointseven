@@ -1,3 +1,5 @@
+@import 'code-editor';
+
 .case-study {
 	width: 100vw;
 	height: auto;
@@ -30,6 +32,15 @@
 			font-size: 1.8rem;
 			line-height: 1.3em;
 		}
+
+		img {
+			width: 28px;
+			position: absolute;
+			bottom: 30px;
+			left: calc(50% - 14px);
+			opacity: 0;
+			animation: 1.5s $ease-in-out-quad case-study-mouse infinite;
+		}
 	}
 
 	main {
@@ -59,7 +70,8 @@
 			margin-bottom: 0;
 		}
 
-		p {
+		p,
+		li {
 			font-size: 2rem;
 			line-height: 1.4em;
 			font-weight: 300;
@@ -80,13 +92,24 @@
 			color: inherit;
 			text-decoration: none;
 			border-bottom: 1px solid $case-study-font;
+			transition: border-bottom 0.3s $ease-out-quad;
 		}
 
-		pre {
+		span.pre {
 			font-family: $mono-font-family;
 			display: inline;
 			background-color: rgba(128, 128, 128, 0.15);
+			font-size: 1.5rem;
 			line-height: 1em;
+		}
+
+		code {
+			font-family: $mono-font-family;
+			-webkit-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+			font-size: 1.4rem;
+			tab-size: 4;
+			line-height: 1.6em;
 		}
 	}
 

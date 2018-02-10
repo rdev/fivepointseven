@@ -1,31 +1,29 @@
 {
-    "search.exclude": {
-        "coverage/": true,
-        "bower_components/": true,
-        "node_modules/": true,
-        "jspm_packages/": true,
-        ".sass-cache/": true,
-        "dist/": true,
-        ".idea/": true,
-        "temp/": true
-    },
-    "files.exclude": {
-        "coverage/": true,
-        "bower_components/": true,
-        "node_modules/": true,
-        "jspm_packages/": true,
-        ".sass-cache/": true,
-        "dist/": true,
-        ".idea/": true,
-        "temp/": true
-    },
-    "eslint.autoFixOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "javascript.format.enable": false,
-    "prettier.eslintIntegration": true,
-    "flow.useNPMPackagedFlow": true,
-    "prettier.disableLanguages": [
-        "markdown"
-    ]
+	"search.exclude": {
+		"coverage/": true,
+		"bower_components/": true,
+		"node_modules/": true,
+		"jspm_packages/": true,
+		".sass-cache/": true,
+		"dist/": true,
+		".idea/": true,
+		"temp/": true
+	},
+	"files.exclude": {
+		"coverage/": true,
+		"bower_components/": true,
+		"node_modules/": true,
+		"jspm_packages/": true,
+		".sass-cache/": true,
+		"dist/": true,
+		".idea/": true,
+		"temp/": true
+	},
+	"javascript.format.enable": false,
+	"eslint.autoFixOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"prettier.eslintIntegration": true,
+	"flow.useNPMPackagedFlow": true,
+	"prettier.disableLanguages": ["markdown"]
 }

@@ -4,7 +4,7 @@ const ProjectList = ({ selectedProject, portfolioItems, selectItem }) => (
 		{portfolioItems.map(item => (
 			<div key={item.name}>
 				<a
-					href="/work"
+					href={`/work/${item.slug}`}
 					className={
 						selectedProject.name === item.name ? 'framework selected' : 'framework'
 					}

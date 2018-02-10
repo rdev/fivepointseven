@@ -34,7 +34,8 @@
 		"node-telegram-bot-api": "^0.30.0",
 		"node-where": "^1.1.0",
 		"react": "^16.2.0",
-		"react-dom": "^16.2.0"
+		"react-dom": "^16.2.0",
+		"react-highlight": "briancappello/react-highlight#react-v16-compiled"
 	},
 	"devDependencies": {
 		"autoprefixer": "^7.2.4",
@@ -76,7 +77,10 @@
 		}
 	},
 	"babel": {
-		"presets": ["next/babel", "vave"]
+		"presets": [
+			"next/babel",
+			"vave"
+		]
 	},
 	"config": {
 		"dockerpuller": {

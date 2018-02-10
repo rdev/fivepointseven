@@ -125,7 +125,8 @@ export default () => (
 			<section>
 				<h3>SCSS</h3>
 				<p>
-					There’s not a single <pre>!important</pre> in any of the styles.
+					There’s not a single <span className="pre">!important</span> in any of the
+					styles.
 					<br />
 					Mind. Blown.
 				</p>
@@ -133,7 +134,7 @@ export default () => (
 			<section>
 				<h3>Them animations</h3>
 				<p>
-					There’s a total of 39 CSS animations on the website (excluding basic
+					There’s a total of 40 CSS animations on the website (excluding basic
 					transitions) to provide maximum magic when interacting with the site.
 					<br />
 					<br />
@@ -163,8 +164,8 @@ export default () => (
 			<h2>What was that about lying to the user?</h2>
 			<img src="/static/work/case-studies/my-website/suspicious.jpg" alt="suspicious" />
 			<p>
-				Yeah, so most of the magic that you see around here is perceived. Let’s break it
-				down, starting from the first thing on the website.
+				Yeah, so most of the magic that you see around here is perceived. Let’s break down
+				all the lies, starting from the first thing on the website.
 			</p>
 			<section>
 				<h3>The spinny compass</h3>
@@ -180,9 +181,10 @@ export default () => (
 					<br />
 					<br />
 					Next.js makes achieving this incredibly easy. What really happens when you go to
-					root from those two pages, is you don’t go to ”<pre>/</pre>”. You go to ”
-					<pre>/?nospin=true</pre>”. That query string is hidden from the user, but
-					available to Next.js router, which makes the magic happen.
+					root from those two pages, is you don’t go to ”<span className="pre">/</span>”.
+					You go to ”
+					<span className="pre">/?nospin=true</span>”. That query string is hidden from
+					the user, but available to Next.js router, which makes the magic happen.
 				</p>
 			</section>
 			<section>
@@ -221,7 +223,7 @@ export default () => (
 			<p>
 				Wow, you’ve made it this far! Or you just scrolled down to see how long this thing
 				is. Regardless of which one it was, thank you for your interest. If you still have
-				some of it left, hit that back button at the top and check out my other works.
+				more interest, hit that back button at the top and check out my other works.
 				<br />
 				<br />
 				Thanks for your time and have an amazing day!

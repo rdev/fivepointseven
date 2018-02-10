@@ -1,3 +1,4 @@
+import Router from 'next/router';
 import autobind from 'autobind-decorator';
 import Page from '../components/Page';
 import Links from '../components/Links';
@@ -5,7 +6,7 @@ import ProjectBrief from '../components/work-page/ProjectBrief';
 import ProjectList from '../components/work-page/ProjectList';
 import Logo from '../components/Logo';
 import portfolioItems from '../lib/portfolio-items';
-import { sleep, addClass, removeClass } from '../lib/utils';
+import { sleep, addClass, removeClass, isMobileDevice } from '../lib/utils';
 
 @autobind
 export default class WorkPage extends React.Component {
@@ -14,14 +15,18 @@ export default class WorkPage extends React.Component {
 	};
 
 	async selectItem(selectedProject) {
-		addClass('work-box-project-info', 'framework-selection-progress');
-		addClass('work-box-project-image', 'cross-disolve');
-		await sleep(0.3);
-		this.setState({ selectedProject }); // No need to trippledot the only item
+		if (isMobileDevice()) {
+			Router.push(`/work/${selectedProject.slug}`);
+		} else {
+			addClass('work-box-project-info', 'framework-selection-progress');
+			addClass('work-box-project-image', 'cross-disolve');
+			await sleep(0.3);
+			this.setState({ selectedProject }); // No need to trippledot the only item
 
-		await sleep(0.4);
-		removeClass('work-box-project-info', 'framework-selection-progress');
-		removeClass('work-box-project-image', 'cross-disolve');
+			await sleep(0.4);
+			removeClass('work-box-project-info', 'framework-selection-progress');
+			removeClass('work-box-project-image', 'cross-disolve');
+		}
 	}
 
 	render() {

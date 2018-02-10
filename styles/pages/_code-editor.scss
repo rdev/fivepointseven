@@ -1,0 +1,80 @@
+/*
+	Port of my own One Dark Space Gray theme from VSCode to Highlight.js
+*/
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	color: #a8b5d0;
+	background: #212835;
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: #5c6370;
+	font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+	color: #d49ff4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+	color: #e56674;
+}
+
+.hljs-literal {
+	color: #59f2f7;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+	color: #6ef49c;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+	color: #e5c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+	color: #e9b684;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+	color: #69b3fb;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+
+.hljs-link {
+	text-decoration: underline;
+}
