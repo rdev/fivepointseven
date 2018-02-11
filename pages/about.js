@@ -1,3 +1,5 @@
+// @flow
+import * as React from 'react';
 import Logo from '../components/Logo';
 import AboutParagraph from '../components/about-page/AboutParagraph';
 import Page from '../components/Page';

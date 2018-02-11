@@ -1,17 +1,27 @@
+// @flow
+import * as React from 'react';
 import autobind from 'autobind-decorator';
 import contactValidation from '../../lib/contact-validation';
+import { log } from '../../lib/log';
 import ErrorMessage from './ErrorMessage';
 
 @autobind
-export default class ContactForm extends React.Component {
-	state = { errorTypes: [], errorMessages: [] };
+export default class ContactForm extends React.Component<FormProps, FormState> {
+	state = { errorTypes: [], errorMessages: {}, submitError: null };
 
-	async handleSubmit(e) {
+	email: ?HTMLInputElement;
+	subject: ?HTMLInputElement;
+	captcha: ?HTMLInputElement;
+	message: ?HTMLTextAreaElement;
+
+	async handleSubmit(e: SyntheticEvent<*>) {
 		e.preventDefault();
-		const email = this.email.value;
-		const subject = this.subject.value;
-		const captcha = this.captcha.value;
-		const message = this.message.value;
+		log("Let's validate all your stuff first.");
+
+		const email = this.email ? this.email.value : '';
+		const subject = this.subject ? this.subject.value : '';
+		const captcha = this.captcha ? this.captcha.value : '';
+		const message = this.message ? this.message.value : '';
 
 		const contactErrors = contactValidation({
 			email,
@@ -21,6 +31,7 @@ export default class ContactForm extends React.Component {
 		});
 
 		if (contactErrors.length === 0) {
+			log("We good. Let's submit.");
 			// @TODO Error handling
 			const res = await fetch('/contact', {
 				headers: {
@@ -35,26 +46,30 @@ export default class ContactForm extends React.Component {
 					message,
 				}),
 			});
+
 			const data = await res.text();
 			const { status } = res;
-			if (status === 500) {
+
+			if (status !== 200) {
+				log('Something went horribly wrong. Sorry about that.');
 				this.setState({
-					...this.state,
 					submitError: data,
 				});
 			} else {
+				log('Got that response from the server. Should be all good.');
 				// @FIXME This could be better
 				this.setState({
-					...this.state,
 					success: true,
 				});
 				this.props.setSuccess(true);
 			}
 		} else {
+			log("Psst. Mate. Not gonna work like that. Here's a bunch of error messages");
 			const errorMessages = contactErrors.reduce((obj, item) => {
 				obj[item.type] = item.message; // eslint-disable-line no-param-reassign
 				return obj;
 			}, {});
+
 			this.setState({
 				errorTypes: contactErrors.map(err => err.type),
 				errorMessages,

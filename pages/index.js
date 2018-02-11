@@ -1,16 +1,19 @@
-import Head from 'next/head';
+// @flow
+import * as React from 'react';
 import Router from 'next/router';
 import initServiceWorker from '../lib/service-worker';
 import HomeWelcome from '../components/home-page/HomeWelcome';
 import Page from '../components/Page';
 import Links from '../components/Links';
+import { log } from '../lib/log';
 
-export default class MainPage extends React.Component {
+export default class MainPage extends React.Component<{}, IndexState> {
 	state = {
 		disableSpin: false,
 	};
 
 	async componentDidMount() {
+		log("Let's spin the compass (or not)");
 		this.setSpin();
 
 		// Let's get to service worker goodness

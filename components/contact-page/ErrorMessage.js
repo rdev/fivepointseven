@@ -1,10 +1,12 @@
-import { setTimeout } from 'timers';
+// @flow
+import * as React from 'react';
+import { log } from '../../lib/log';
 
 // @TODO Make all this animation timing bullshit nicer
-export default class ErrorMessage extends React.Component {
+export default class ErrorMessage extends React.Component<ErrorProps, ErrorState> {
 	state = { visible: false };
 
-	componentWillReceiveProps(nextProps) {
+	componentWillReceiveProps(nextProps: ErrorProps) {
 		if (nextProps.message) {
 			this.setState({ visible: true, hiding: false }, this.hideMessage.bind(this));
 		}
@@ -12,11 +14,13 @@ export default class ErrorMessage extends React.Component {
 
 	hideMessage() {
 		setTimeout(() => {
-			this.setState({ hiding: true, visible: false }, this.reset.bind(this));
+			log("You should've read it by now, imma hide it.");
+			this.setState({ hiding: true, visible: false }, () => this.reset());
 		}, 6000);
 	}
 
 	reset() {
+		log('Resetting error message...');
 		setTimeout(() => this.setState({ visible: false, hiding: false }), 600);
 	}
 

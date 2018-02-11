@@ -1,0 +1,21 @@
+[ignore]
+.*/node_modules/fbjs/.*
+.*/node_modules/config-chain/test/broken.json
+.*/node_modules/npmconf/test/.*
+.*/node_modules/electron-packager/test/.*
+
+[include]
+
+[libs]
+types/
+
+[lints]
+
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.css
+module.file_ext=.scss
+module.name_mapper='.*(.css.scss)' -> '{}'
+esproposal.decorators=ignore

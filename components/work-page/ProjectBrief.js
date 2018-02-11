@@ -1,15 +1,20 @@
+// @flow
+import * as React from 'react';
 import Router from 'next/router';
 import autobind from 'autobind-decorator';
 import { sleep, addClass, hexToRgb } from '../../lib/utils';
+import { log } from '../../lib/log';
 
 @autobind
-export default class ProjectBrief extends React.Component {
-	async goToProject(e) {
+export default class ProjectBrief extends React.Component<BriefProps, {}> {
+	async goToProject(e: SyntheticEvent<*>) {
 		e.preventDefault();
+		log('Watch this crazy transition!');
 		addClass('work-box', 'transitioning');
 		addClass('links', 'fade-out');
 		await sleep(1.25);
 
+		log("Now we're actually changing the page");
 		Router.push(`/work/${this.props.project.slug}`);
 	}
 

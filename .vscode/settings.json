@@ -20,6 +20,7 @@
 		"temp/": true
 	},
 	"javascript.format.enable": false,
+	"javascript.validate.enable": false,
 	"eslint.autoFixOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,

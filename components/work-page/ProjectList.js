@@ -1,4 +1,8 @@
-const ProjectList = ({ selectedProject, portfolioItems, selectItem }) => (
+// @flow
+import * as React from 'react';
+import { log } from '../../lib/log';
+
+const ProjectList = ({ selectedProject, portfolioItems, selectItem }: ProjectListProps) => (
 	<div className="work-box-list">
 		<h2>the things i built</h2>
 		{portfolioItems.map(item => (
@@ -10,6 +14,7 @@ const ProjectList = ({ selectedProject, portfolioItems, selectItem }) => (
 					}
 					onClick={(e) => {
 						e.preventDefault();
+						log('Changing active item...');
 						selectItem(item);
 					}}
 				>

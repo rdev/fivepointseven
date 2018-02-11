@@ -1,3 +1,5 @@
+// @flow
+import * as React from 'react';
 import Head from 'next/head';
 import stylesheet from '../styles/styles.scss';
 

@@ -1,4 +1,7 @@
-export default ({ project }) => (
+// @flow
+import * as React from 'react';
+
+export default ({ project }: CaseStudyHeader) => (
 	<React.Fragment>
 		<div
 			className="case-study-project-image"

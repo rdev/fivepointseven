@@ -1,3 +1,5 @@
+// @flow
+import * as React from 'react';
 import Highlight from 'react-highlight';
 import { stripIndent } from 'common-tags';
 import CaseStudy from '../../components/case-study/CaseStudy';

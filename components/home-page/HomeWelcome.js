@@ -1,6 +1,8 @@
+// @flow
+import * as React from 'react';
 import Logo from '../Logo';
 
-const HomeWelcome = ({ animated }) => (
+const HomeWelcome = ({ animated }: CompassProps) => (
 	<div className="home-welcome" id="home-welcome">
 		<Logo animated={animated} />
 		<div className="home-heading home-heading-animated" id="home-heading">

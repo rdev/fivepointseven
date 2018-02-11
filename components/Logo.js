@@ -1,4 +1,7 @@
-const Logo = ({ animated }) => (
+// @flow
+import * as React from 'react';
+
+const Logo = ({ animated }: CompassProps) => (
 	<img
 		src="/static/compass.svg"
 		alt="logo"

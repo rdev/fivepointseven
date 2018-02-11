@@ -1,3 +1,5 @@
+// @flow
+import * as React from 'react';
 import CaseStudy from '../../components/case-study/CaseStudy';
 import portfolioItems from '../../lib/portfolio-items';
 
@@ -82,7 +84,9 @@ export default () => (
 				<p>
 					CSS Grid is wonderful and magical and there’s absolutely no reason not to use
 					it.
-					<blockquote>- Oi Max, but what about old browsers?</blockquote>
+				</p>
+				<blockquote>- Oi Max, but what about old browsers?</blockquote>
+				<p>
 					They have auto-update functionality since 2014. Old browsers is a thing that
 					haunts systems that rely on lots of legacy shit. Most web applications built
 					today - don’t and shouldn’t.

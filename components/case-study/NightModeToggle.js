@@ -1,4 +1,7 @@
-export default class NightModeToggle extends React.Component {
+// @flow
+import * as React from 'react';
+
+export default class NightModeToggle extends React.Component<NMTProps, NMTState> {
 	state = {
 		visible: false,
 	};
@@ -7,8 +10,14 @@ export default class NightModeToggle extends React.Component {
 		this.scrollspy();
 	}
 
+	componentWillUnmount() {
+		cancelAnimationFrame(this.scrollSpyID);
+	}
+
+	scrollSpyID: AnimationFrameID;
+
 	scrollspy() {
-		requestAnimationFrame(() => {
+		this.scrollSpyID = requestAnimationFrame(() => {
 			if (window.scrollY > 90 && !this.state.visible) {
 				this.setState({
 					visible: true,

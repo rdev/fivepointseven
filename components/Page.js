@@ -1,7 +1,9 @@
+// @flow
+import * as React from 'react';
 import Head from 'next/head';
 import stylesheet from '../styles/styles.scss';
 
-export default ({ title, noscriptContent, children }) => (
+export default ({ title, noscriptContent, children }: Page) => (
 	<React.Fragment>
 		<Head>
 			<title>{title ? `Max Rovensky | ${title}` : 'Max Rovensky'}</title>

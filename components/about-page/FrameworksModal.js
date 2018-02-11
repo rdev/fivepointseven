@@ -1,16 +1,21 @@
+// @flow
+import * as React from 'react';
 import autobind from 'autobind-decorator';
 import { sleep, addClass, removeClass } from '../../lib/utils';
+import { log } from '../../lib/log';
 import frameworks from '../../lib/frameworks-and-tools';
 
 @autobind
-export default class FrameworksModal extends React.Component {
+export default class FrameworksModal extends React.Component<{}, FrameworksState> {
 	static async closeModal() {
+		log('Getting rid of the modal and bringing back the paragraph...');
 		addClass('frameworks-modal', 'frameworks-modal-out');
 
 		await sleep(0.1);
 		addClass('about-container', 'unfold-paragraph');
 
 		await sleep(1);
+		log('Killing unnecessary classes...');
 		removeClass('frameworks-modal', 'frameworks-modal-in');
 		removeClass('frameworks-modal', 'frameworks-modal-out');
 		removeClass('about-container', 'fold-paragraph');
@@ -21,7 +26,8 @@ export default class FrameworksModal extends React.Component {
 		selectedItem: 'react',
 	};
 
-	async selectItem(selectedItem) {
+	async selectItem(selectedItem: string) {
+		log(`Changing the item to ${selectedItem} with some sweet animations!`);
 		addClass('framework-info', 'framework-selection-progress');
 
 		await sleep(0.3);

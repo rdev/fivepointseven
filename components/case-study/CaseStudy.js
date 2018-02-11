@@ -1,32 +1,38 @@
+// @flow
+import * as React from 'react';
 import Head from 'next/head';
+import { log } from '../../lib/log';
 import CaseStudyHeader from '../../components/case-study/CaseStudyHeader';
 import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
 import stylesheet from '../../styles/styles.scss';
 
-export default class CaseStudy extends React.Component {
+export default class CaseStudy extends React.Component<CSProps, CSState> {
 	state = {
 		nightMode: false,
 	};
 
 	componentDidMount() {
+		log("Let's get the saved night mode setting from localstorage");
 		this.getSavedNightMode();
 	}
 
 	getSavedNightMode() {
-		if (localStorage.getItem('nightmode')) {
+		const lsNightMode = localStorage.getItem('nightmode');
+		if (lsNightMode) {
 			this.setState({
-				nightMode: JSON.parse(localStorage.getItem('nightmode')),
+				nightMode: JSON.parse(lsNightMode),
 			});
 		}
 	}
 
 	toggleNightMode() {
+		log('Toggling night mode and shamelessly saving it in localstorage');
 		this.setState(
 			{
 				nightMode: !this.state.nightMode,
 			},
-			() => localStorage.setItem('nightmode', this.state.nightMode),
+			() => localStorage.setItem('nightmode', this.state.nightMode.toString()),
 		);
 	}
 

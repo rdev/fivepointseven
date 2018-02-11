@@ -1,8 +1,10 @@
+// @flow
+import * as React from 'react';
 import Router from 'next/router';
 import autobind from 'autobind-decorator';
 import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
-import { greeting } from '../lib/log';
+import { greeting, log } from '../lib/log';
 
 Router.onAppUpdated = (nextUrl) => {
 	// persist the local state
@@ -10,11 +12,10 @@ Router.onAppUpdated = (nextUrl) => {
 };
 
 @autobind
-export default class Links extends React.Component {
+export default class Links extends React.Component<LinksProps, LinksState> {
 	state = {
 		active: this.props.active,
 		linksClass: this.props.active === 'hello' ? 'links hidden' : 'links',
-		logoAnimation: false,
 	};
 
 	componentDidMount() {
@@ -32,14 +33,20 @@ export default class Links extends React.Component {
 		// Reeeeally not a fan of this, I think this approach is butt ugly
 		// But other approaches are even buttier and uglier
 		if (isSafari && isIPhone) {
-			document.querySelector("div[class*='container']").style.height = '80vh';
+			const container = document.querySelector("div[class*='container']");
+			const frameworksModal = document.getElementById('frameworks-modal');
+			const workBox = document.getElementById('work-box');
 
-			if (Router.pathname === '/about') {
-				document.getElementById('frameworks-modal').style.height = '70vh';
+			if (container) {
+				container.style.height = '80vh';
 			}
 
-			if (Router.pathname === '/work') {
-				document.getElementById('work-box').style.height = '62vh';
+			if (Router.pathname === '/about' && frameworksModal) {
+				frameworksModal.style.height = '70vh';
+			}
+
+			if (Router.pathname === '/work' && workBox) {
+				workBox.style.height = '62vh';
 			}
 		}
 
@@ -48,7 +55,6 @@ export default class Links extends React.Component {
 
 	setLinksClass() {
 		this.setState({
-			...this.state,
 			linksClass:
 				Router.pathname === '/' && !Router.query.nospin && !Router.query.noLinksAnimation
 					? 'links links-animated'
@@ -56,8 +62,9 @@ export default class Links extends React.Component {
 		});
 	}
 
-	async goToAbout(e) {
+	async goToAbout(e: SyntheticEvent<*>) {
 		e.preventDefault();
+		log('Moving you to "About" page...');
 
 		this.setState({
 			active: 'about',
@@ -98,8 +105,9 @@ export default class Links extends React.Component {
 		}
 	}
 
-	async goToWork(e) {
+	async goToWork(e: SyntheticEvent<*>) {
 		e.preventDefault();
+		log('Moving you to "Work" page...');
 
 		this.setState({
 			active: 'work',
@@ -140,8 +148,9 @@ export default class Links extends React.Component {
 		}
 	}
 
-	async goToContact(e) {
+	async goToContact(e: SyntheticEvent<*>) {
 		e.preventDefault();
+		log('Moving you to "Contact" page...');
 
 		this.setState({
 			active: 'contact',
@@ -183,8 +192,9 @@ export default class Links extends React.Component {
 		}
 	}
 
-	async goToMain(e) {
+	async goToMain(e: SyntheticEvent<*>) {
 		e.preventDefault();
+		log('Moving you to home page...');
 
 		this.setState({
 			active: 'hello',

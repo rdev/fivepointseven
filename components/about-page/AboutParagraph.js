@@ -1,11 +1,16 @@
+// @flow
+import * as React from 'react';
 import { sleep, addClass } from '../../lib/utils';
+import { log } from '../../lib/log';
 
-export default class AboutParagraph extends React.Component {
-	static async showFrameworksModal(e) {
+export default class AboutParagraph extends React.Component<{}, {}> {
+	static async showFrameworksModal(e: SyntheticEvent<*>) {
+		log("Let's fold the paragraph...");
 		e.preventDefault();
 
 		addClass('about-container', 'fold-paragraph');
 		await sleep(0.2);
+		log("And now here's your modal!");
 		addClass('frameworks-modal', 'frameworks-modal-in');
 	}
 
