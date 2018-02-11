@@ -52,7 +52,7 @@ export default class FrameworksModal extends React.Component<{}, FrameworksState
 										? 'framework selected'
 										: 'framework'
 								}
-								onClick={(e) => {
+								onClick={e => {
 									e.preventDefault();
 									this.selectItem(item);
 								}}

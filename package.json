@@ -12,7 +12,7 @@
 		"prettier": "prettier './**/*.js' './**/*.json' './**/*.scss' --write",
 		"eslint": "eslint './**/*.js' --format=pretty --fix",
 		"lint": "vave lint",
-		"test": "npm run lint",
+		"test": "run-p lint flow",
 		"flow:start": "flow start",
 		"flow": "flow"
 	},

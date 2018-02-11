@@ -4,7 +4,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
 	poweredByHeader: false,
-	webpack: (config) => {
+	webpack: config => {
 		config.module.rules.push(
 			{
 				test: /\.(css|scss)/,
@@ -36,42 +36,44 @@ module.exports = {
 			},
 		);
 
-		config.plugins.push(new SWPrecacheWebpackPlugin({
-			verbose: true,
-			staticFileGlobsIgnorePatterns: [/\.next\//],
-			staticFileGlobs: ['static/**/**.*'],
-			runtimeCaching: [
-				{
-					handler: 'cacheFirst',
-					urlPattern: /^https?.*/,
+		config.plugins.push(
+			new SWPrecacheWebpackPlugin({
+				verbose: true,
+				staticFileGlobsIgnorePatterns: [/\.next\//],
+				staticFileGlobs: ['static/**/**.*'],
+				runtimeCaching: [
+					{
+						handler: 'cacheFirst',
+						urlPattern: /^https?.*/,
+					},
+				],
+				dynamicUrlToDependencies: {
+					'/': [
+						'pages/index.js',
+						'components/home-page/HomeWelcome.js',
+						'components/Links.js',
+					],
+					'/about': [
+						'pages/about.js',
+						'components/about-page/AboutParagraph.js',
+						'components/about-page/FrameworksModal.js',
+						'components/Links.js',
+					],
+					'/work': [
+						'pages/work.js',
+						'components/work-page/ProjectBrief.js',
+						'components/work-page/ProjectList.js',
+						'components/Links.js',
+					],
+					'/contact': [
+						'pages/contact.js',
+						'components/contact-page/ContactForm.js',
+						'components/contact-page/ErrorMessage.js',
+						'components/Links.js',
+					],
 				},
-			],
-			dynamicUrlToDependencies: {
-				'/': [
-					'pages/index.js',
-					'components/home-page/HomeWelcome.js',
-					'components/Links.js',
-				],
-				'/about': [
-					'pages/about.js',
-					'components/about-page/AboutParagraph.js',
-					'components/about-page/FrameworksModal.js',
-					'components/Links.js',
-				],
-				'/work': [
-					'pages/work.js',
-					'components/work-page/ProjectBrief.js',
-					'components/work-page/ProjectList.js',
-					'components/Links.js',
-				],
-				'/contact': [
-					'pages/contact.js',
-					'components/contact-page/ContactForm.js',
-					'components/contact-page/ErrorMessage.js',
-					'components/Links.js',
-				],
-			},
-		}));
+			}),
+		);
 
 		return config;
 	},
