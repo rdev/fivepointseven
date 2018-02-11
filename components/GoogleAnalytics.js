@@ -12,7 +12,7 @@ export default () => (
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
 
-					gtag('config', 'CI_ENV:GA_ID');
+					gtag('config', 'CI_ENV_GA_ID');
 				`,
 			}}
 		/>
