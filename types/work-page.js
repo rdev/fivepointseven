@@ -8,6 +8,14 @@ declare type Project = {
 	image: string,
 };
 
+declare type WorkInitialProps = {
+	query: InitialPropsQuery,
+};
+
+declare type WorkProps = {
+	selected: string,
+};
+
 declare type WorkState = {
 	selectedProject: Project,
 };

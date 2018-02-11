@@ -66,7 +66,7 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 					<GoogleAnalytics />
 				</Head>
 				<div className={nightMode ? 'case-study night-mode' : 'case-study'} id="case-study">
-					<BackButton />
+					<BackButton name={project.name} />
 					<CaseStudyHeader project={project} />
 					<main>
 						<div>{children}</div>

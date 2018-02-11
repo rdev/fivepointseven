@@ -1,19 +1,12 @@
 // @flow
 import * as React from 'react';
 import Router from 'next/router';
+import autobind from 'autobind-decorator';
 import { addClass, sleep } from '../../lib/utils';
 import { log } from '../../lib/log';
 
-export default class BackButton extends React.Component<{}, BackButtonState> {
-	static async goBack(e: SyntheticEvent<*>) {
-		e.preventDefault();
-		log('Taking you back...');
-
-		addClass('case-study', 'fade-out');
-		await sleep(0.6);
-		Router.push('/work');
-	}
-
+@autobind
+export default class BackButton extends React.Component<BBProps, BBState> {
 	state = {
 		scrolledPastHeader: false,
 	};
@@ -29,6 +22,18 @@ export default class BackButton extends React.Component<{}, BackButtonState> {
 	}
 
 	scrollSpyID: AnimationFrameID;
+
+	async goBack(e: SyntheticEvent<*>) {
+		e.preventDefault();
+		log('Taking you back...');
+
+		addClass('case-study', 'fade-out');
+		await sleep(0.6);
+		Router.push(
+			{ pathname: '/work', query: { selected: this.props.name } },
+			{ pathname: '/work' },
+		);
+	}
 
 	scrollspy() {
 		const threshold = window.innerHeight - 30;
@@ -55,7 +60,7 @@ export default class BackButton extends React.Component<{}, BackButtonState> {
 			: 'case-study-back-button';
 
 		return (
-			<a href="/work" onClick={BackButton.goBack} className={className}>
+			<a href="/work" onClick={this.goBack} className={className}>
 				<svg width="36px" height="68px" viewBox="0 0 36 68">
 					<g
 						stroke="none"

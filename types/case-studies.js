@@ -21,6 +21,10 @@ declare type NMTState = {
 	visible: boolean,
 };
 
-declare type BackButtonState = {
+declare type BBProps = {
+	name: string,
+};
+
+declare type BBState = {
 	scrolledPastHeader: boolean,
 };

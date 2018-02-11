@@ -106,7 +106,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				<input
 					type="email"
 					name="email"
-					placeholder="whathaveyou@gmail.com"
+					placeholder="whatsup@gmail.com"
 					className={errorTypes.includes('email') ? 'error' : null}
 					ref={ref => {
 						this.email = ref;

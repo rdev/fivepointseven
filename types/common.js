@@ -14,3 +14,7 @@ declare type LinksState = {
 	active: string,
 	linksClass: string,
 };
+
+declare type InitialPropsQuery = {
+	[string]: string,
+};

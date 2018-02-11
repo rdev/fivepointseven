@@ -13,9 +13,17 @@ import { sleep, addClass, removeClass, isMobileDevice } from '../lib/utils';
 import { log } from '../lib/log';
 
 @autobind
-export default class WorkPage extends React.Component<{}, WorkState> {
+export default class WorkPage extends React.Component<WorkProps, WorkState> {
+	static async getInitialProps({ query }: WorkInitialProps) {
+		return {
+			selected: query.selected,
+		};
+	}
+
 	state = {
-		selectedProject: portfolioItems[0],
+		selectedProject:
+			portfolioItems.filter(item => item.name === this.props.selected)[0] ||
+			portfolioItems[0],
 	};
 
 	async selectItem(selectedProject: Project) {
