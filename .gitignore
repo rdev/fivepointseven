@@ -1,6 +1,7 @@
 node_modules
 .next
 .env
+*.sh
 
 # Nope
 *.woff

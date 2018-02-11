@@ -26,5 +26,8 @@ after_success:
   - sed -i "s/CI_ENV_GA_ID/${GA_ID}/g" ./lib/keen.js
   - echo $TELEGRAM_TOKEN > .env
   - echo $TELEGRAM_ID >> .env
+  - wget ${ASSETS_URL}/font-main.woff -O static/font-main.woff
+  - wget ${ASSETS_URL}/font-light.woff -O static/font-light.woff
+  - wget ${ASSETS_URL}/font-monospace.woff -O static/font-monospace.woff
   - docker build -t fivepointseven/fivepointseven .
   - docker push fivepointseven/fivepointseven
