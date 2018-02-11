@@ -18,3 +18,7 @@ declare type LinksState = {
 declare type InitialPropsQuery = {
 	[string]: string,
 };
+
+declare type MTProps = {
+	caseStudy?: string,
+}

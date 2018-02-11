@@ -282,7 +282,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 					</div>
 				</div>
 				<div className="no-grid home-heading">
-					<div className="home-heading home-heading-animated" id="home-heading">
+					<div className="home-heading home-heading-animated">
 						<h1>Psst. Mate. Your browser is pretty old.</h1>
 						<h2>
 							There{"'"}s nothing wrong with that of course, but this website is built

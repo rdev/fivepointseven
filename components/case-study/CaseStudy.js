@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { log } from '../../lib/log';
 import Keen from '../../lib/keen';
 import GoogleAnalytics from '../GoogleAnalytics';
+import MetaTags from '../MetaTags';
 import CaseStudyHeader from '../../components/case-study/CaseStudyHeader';
 import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
@@ -63,6 +64,7 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 				<Head>
 					<title>Max Rovensky | {project.name}</title>
 					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+					<MetaTags />
 					<GoogleAnalytics />
 				</Head>
 				<div className={nightMode ? 'case-study night-mode' : 'case-study'} id="case-study">
