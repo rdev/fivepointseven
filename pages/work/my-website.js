@@ -185,6 +185,13 @@ export default () => (
 					registry.
 				</p>
 			</section>
+			<section>
+				<h3>HTTP/2</h3>
+				<p>
+					Website is served via HTTP/2 which is supposed to give you some of that extra
+					speed due to the sweet multiplexing that H2 does.
+				</p>
+			</section>
 		</section>
 		<section>
 			<h2>What was that about lying to the user?</h2>

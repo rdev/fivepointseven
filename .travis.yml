@@ -24,8 +24,8 @@ after_success:
   - sed -i "s/CI_ENV_KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
   - sed -i "s/CI_ENV_KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
   - sed -i "s/CI_ENV_GA_ID/${GA_ID}/g" ./lib/keen.js
-  - echo TELEGRAM_TOKEN:$TELEGRAM_TOKEN > .env
-  - echo TELEGRAM_ID:$TELEGRAM_ID >> .env
+  - echo TELEGRAM_TOKEN=$TELEGRAM_TOKEN > .env
+  - echo TELEGRAM_ID=$TELEGRAM_ID >> .env
   - wget ${ASSETS_URL}/font-main.woff -q -O static/font-main.woff
   - wget ${ASSETS_URL}/font-light.woff -q -O static/font-light.woff
   - wget ${ASSETS_URL}/font-monospace.woff -q -O static/font-monospace.woff

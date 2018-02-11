@@ -64,7 +64,7 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 				<Head>
 					<title>Max Rovensky | {project.name}</title>
 					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-					<MetaTags />
+					<MetaTags caseStudy={project.brief} />
 					<GoogleAnalytics />
 				</Head>
 				<div className={nightMode ? 'case-study night-mode' : 'case-study'} id="case-study">
