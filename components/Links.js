@@ -7,7 +7,7 @@ import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting, log } from '../lib/log';
 
-Router.onAppUpdated = nextUrl => {
+Router.onAppUpdated = (nextUrl) => {
 	// persist the local state
 	window.location.href = nextUrl;
 };

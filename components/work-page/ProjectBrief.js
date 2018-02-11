@@ -10,6 +10,7 @@ export default class ProjectBrief extends React.Component<BriefProps, {}> {
 	async goToProject(e: SyntheticEvent<*>) {
 		e.preventDefault();
 		log('Watch this crazy transition!');
+
 		addClass('work-box', 'transitioning');
 		addClass('links', 'fade-out');
 		await sleep(1.25);
