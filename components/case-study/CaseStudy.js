@@ -5,6 +5,7 @@ import { log } from '../../lib/log';
 import CaseStudyHeader from '../../components/case-study/CaseStudyHeader';
 import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
+import initServiceWorker from '../../lib/service-worker';
 import stylesheet from '../../styles/styles.scss';
 
 export default class CaseStudy extends React.Component<CSProps, CSState> {
@@ -15,6 +16,9 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 	componentDidMount() {
 		log("Let's get the saved night mode setting from localstorage");
 		this.getSavedNightMode();
+
+		// Don't forget the service worker
+		initServiceWorker();
 	}
 
 	getSavedNightMode() {

@@ -7,7 +7,7 @@
 		"dev": "next",
 		"build": "next build",
 		"start": "next start",
-		"production": "node server.js",
+		"production": "cross-env NODE_ENV=production node server.js",
 		"export": "next export",
 		"prettier": "prettier './**/*.js' './**/*.json' './**/*.scss' --write",
 		"eslint": "eslint './**/*.js' --format=pretty --fix",
@@ -26,6 +26,7 @@
 	"dependencies": {
 		"autobind-decorator": "^2.1.0",
 		"autoprefixer": "^7.2.4",
+		"babel-register": "^6.26.0",
 		"body-parser": "^1.18.2",
 		"common-tags": "^1.7.2",
 		"compression": "^1.7.1",
@@ -79,7 +80,10 @@
 		}
 	},
 	"babel": {
-		"presets": ["next/babel", "vave"]
+		"presets": [
+			"next/babel",
+			"vave"
+		]
 	},
 	"config": {
 		"dockerpuller": {

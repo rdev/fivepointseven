@@ -55,6 +55,10 @@
 }
 
 .inline-link {
+	font-family: $base-font-family;
+	font-size: inherit;
+	line-height: 1.5em;
+	padding: 0;
 	position: relative;
 	overflow: hidden;
 	display: inline-block;
@@ -64,6 +68,8 @@
 	white-space: nowrap;
 	cursor: pointer;
 	color: $text;
+	border: 0;
+	background: none;
 
 	&:before {
 		position: absolute;

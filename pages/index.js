@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react';
 import Router from 'next/router';
-import initServiceWorker from '../lib/service-worker';
 import HomeWelcome from '../components/home-page/HomeWelcome';
 import Page from '../components/Page';
 import Links from '../components/Links';
@@ -15,9 +14,6 @@ export default class MainPage extends React.Component<{}, IndexState> {
 	async componentDidMount() {
 		log("Let's spin the compass (or not)");
 		this.setSpin();
-
-		// Let's get to service worker goodness
-		initServiceWorker();
 	}
 
 	setSpin() {
@@ -34,6 +30,10 @@ export default class MainPage extends React.Component<{}, IndexState> {
 				.links {
 					transform: rotateY(0deg) scale(1);
 					opacity: 1;
+				}
+
+				.links.hidden {
+					display: flex;
 				}
 			</style>`;
 

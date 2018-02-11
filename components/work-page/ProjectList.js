@@ -12,7 +12,7 @@ const ProjectList = ({ selectedProject, portfolioItems, selectItem }: ProjectLis
 					className={
 						selectedProject.name === item.name ? 'framework selected' : 'framework'
 					}
-					onClick={e => {
+					onClick={(e) => {
 						e.preventDefault();
 						log('Changing active item...');
 						selectItem(item);

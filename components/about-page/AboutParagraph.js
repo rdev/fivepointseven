@@ -41,13 +41,9 @@ export default class AboutParagraph extends React.Component<{}, {}> {
 				<span>
 					Anyway, today my field of knowledge includes Node, React, React Native, Docker
 					and all the things that go with it. Question. Do I really need to list all the{' '}
-					<a
-						className="inline-link"
-						href="/about/frameworks"
-						onClick={AboutParagraph.showFrameworksModal}
-					>
+					<button className="inline-link" onClick={AboutParagraph.showFrameworksModal}>
 						frameworks
-					</a>{' '}
+					</button>{' '}
 					like people do?
 				</span>
 			</p>

@@ -26,7 +26,7 @@ async function startServer() {
 		next();
 	});
 
-	server.get('/service-worker.js', (req, res) => {
+	server.use('/service-worker.js', (req, res) => {
 		const filePath = join(__dirname, '.next/service-worker.js');
 		app.serveStatic(req, res, filePath);
 	});
@@ -36,7 +36,7 @@ async function startServer() {
 
 	server.get('*', (req, res) => handle(req, res));
 
-	server.listen(port, err => {
+	server.listen(port, (err) => {
 		if (err) throw err;
 		console.log(`> Ready on http://localhost:${port}`);
 	});

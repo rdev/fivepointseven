@@ -14,9 +14,9 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
 script:
-  - npm run test:coverage
-  - npm run build
+  - npm run test
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD; fi
   - sed -i "s/CI_ENV:KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
   - sed -i "s/CI_ENV:KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
+  - npm run build

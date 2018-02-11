@@ -33,8 +33,8 @@ export default () => (
 				This website is meant to be a technology showcase, so I tried to pack as much into
 				it as possible. Among other things, it leverages CSS Grid Layout, Service Workers,
 				Server Side Rendering, has sweet animations and fluid user experience, it’s fully
-				ARIA-compilant and it even works with JavaScript completely disabled. I mean, holy
-				shit, right?
+				ARIA-compilant and it even works with JavaScript completely disabled (with a few
+				minor exceptions). I mean, holy shit, right?
 			</p>
 			<p>
 				And I haven’t even told you about all the non-obvious stuff yet. But let’s go
@@ -74,7 +74,7 @@ export default () => (
 					When you load any given page on this website, you load about 100-200kb of
 					content. If your browser supports service workers, that little guy also gets
 					installed. And upon installation it pulls every single thing in existence on
-					this website (about 1mb total) into your cache, and from that point on, the
+					this website (about 1.2mb total) into your cache, and from that point on, the
 					whole website is loaded entirely from disk, which is near instant. And by
 					complete accident, it also makes the website offline first ¯\_(ツ)_/¯.
 				</p>
@@ -127,15 +127,6 @@ export default () => (
 				</p>
 			</section>
 			<section>
-				<h3>SCSS</h3>
-				<p>
-					There’s not a single <span className="pre">!important</span> in any of the
-					styles.
-					<br />
-					Mind. Blown.
-				</p>
-			</section>
-			<section>
 				<h3>Them animations</h3>
 				<p>
 					There’s a total of 40 CSS animations on the website (excluding basic
@@ -146,6 +137,44 @@ export default () => (
 					GSAP’s amazing timeline, but it started quickly becoming a maintenance pain and,
 					well, required JavaScript to work, so I decided to switch to CSS animations.
 					That way, most of the magic works even when JS is completely disabled.
+				</p>
+			</section>
+			<section>
+				<h3>SCSS</h3>
+				<p>
+					There’s not a single <span className="pre">!important</span> in any of the
+					styles.
+					<br />
+					Mind. Blown.
+				</p>
+			</section>
+			<section>
+				<h3>Flow Types</h3>
+				<p>
+					Code is fully typed using{' '}
+					<a href="https://flow.org" target="_blank" rel="noopener noreferrer">
+						Flow
+					</a>{' '}
+					types.
+				</p>
+			</section>
+			<section>
+				<h3>Testing</h3>
+
+				<p>
+					Tests are written in{' '}
+					<a
+						href="https://facebook.github.io/jest/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Jest
+					</a>{' '}
+					as it’s my preferred testing framework. Airbnb’s{' '}
+					<a href="http://airbnb.io/enzyme/" target="_blank" rel="noopener noreferrer">
+						Enzyme
+					</a>{' '}
+					is used to test React components.
 				</p>
 			</section>
 			<section>

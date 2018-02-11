@@ -2,11 +2,12 @@
 import * as React from 'react';
 import Router from 'next/router';
 import autobind from 'autobind-decorator';
+import initServiceWorker from '../lib/service-worker';
 import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting, log } from '../lib/log';
 
-Router.onAppUpdated = nextUrl => {
+Router.onAppUpdated = (nextUrl) => {
 	// persist the local state
 	window.location.href = nextUrl;
 };
@@ -27,11 +28,14 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 		// This component exists on every page, so let's sneak some global things into it
 		greeting();
 
-		const isSafari = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
-		const isIPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		// Let's get to service worker goodness
+		initServiceWorker();
 
 		// Reeeeally not a fan of this, I think this approach is butt ugly
 		// But other approaches are even buttier and uglier
+		const isSafari = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
+		const isIPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
 		if (isSafari && isIPhone) {
 			const container = document.querySelector("div[class*='container']");
 			const frameworksModal = document.getElementById('frameworks-modal');

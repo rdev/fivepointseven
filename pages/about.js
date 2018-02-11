@@ -7,7 +7,16 @@ import Links from '../components/Links';
 import FrameworksModal from '../components/about-page/FrameworksModal';
 
 const AboutPage = () => (
-	<Page title="About">
+	<Page
+		title="About"
+		const
+		noscriptContent={`
+			<style>
+				.inline-link:before {
+					display: none;
+				}
+			</style>`}
+	>
 		<div className="about-wrapper" id="about-wrapper">
 			<div className="about-container" id="about-container">
 				<Logo />
