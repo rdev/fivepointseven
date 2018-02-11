@@ -5,15 +5,20 @@ import HomeWelcome from '../components/home-page/HomeWelcome';
 import Page from '../components/Page';
 import Links from '../components/Links';
 import { log } from '../lib/log';
+import Keen from '../lib/keen';
 
 export default class MainPage extends React.Component<{}, IndexState> {
 	state = {
 		disableSpin: false,
 	};
 
-	async componentDidMount() {
+	componentDidMount() {
 		log("Let's spin the compass (or not)");
 		this.setSpin();
+
+		if (Router.query.bc === '') {
+			Keen.recordEvent('bc_pageview');
+		}
 	}
 
 	setSpin() {

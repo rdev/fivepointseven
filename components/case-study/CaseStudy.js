@@ -2,6 +2,8 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { log } from '../../lib/log';
+import Keen from '../../lib/keen';
+import GoogleAnalytics from '../GoogleAnalytics';
 import CaseStudyHeader from '../../components/case-study/CaseStudyHeader';
 import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
@@ -19,7 +21,13 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 
 		// Don't forget the service worker
 		initServiceWorker();
+
+		Keen.recordEvent('case_study_view', {
+			name: this.props.project.name,
+		});
 	}
+
+	componentWillUnmount() {}
 
 	getSavedNightMode() {
 		const lsNightMode = localStorage.getItem('nightmode');
@@ -36,7 +44,13 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 			{
 				nightMode: !this.state.nightMode,
 			},
-			() => localStorage.setItem('nightmode', this.state.nightMode.toString()),
+			() => {
+				localStorage.setItem('nightmode', this.state.nightMode.toString());
+
+				Keen.recordEvent('night_mode_toggle', {
+					mode: this.state.nightMode ? 'night' : 'day',
+				});
+			},
 		);
 	}
 
@@ -49,6 +63,7 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 				<Head>
 					<title>Max Rovensky | {project.name}</title>
 					<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+					<GoogleAnalytics />
 				</Head>
 				<div className={nightMode ? 'case-study night-mode' : 'case-study'} id="case-study">
 					<BackButton />

@@ -2,6 +2,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import stylesheet from '../styles/styles.scss';
+import GoogleAnalytics from './GoogleAnalytics';
 
 export default ({ title, noscriptContent, children }: Page) => (
 	<React.Fragment>
@@ -14,6 +15,7 @@ export default ({ title, noscriptContent, children }: Page) => (
 					__html: noscriptContent,
 				}}
 			/>
+			<GoogleAnalytics />
 		</Head>
 		{children}
 	</React.Fragment>

@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import Keen from '../../lib/keen';
 import { sleep, addClass } from '../../lib/utils';
 import { log } from '../../lib/log';
 
@@ -12,6 +13,8 @@ export default class AboutParagraph extends React.Component<{}, {}> {
 		await sleep(0.2);
 		log("And now here's your modal!");
 		addClass('frameworks-modal', 'frameworks-modal-in');
+
+		Keen.recordEvent('frameworks_modal_open');
 	}
 
 	render() {

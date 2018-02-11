@@ -3,6 +3,7 @@ import * as React from 'react';
 import autobind from 'autobind-decorator';
 import contactValidation from '../../lib/contact-validation';
 import { log } from '../../lib/log';
+import Keen from '../../lib/keen';
 import ErrorMessage from './ErrorMessage';
 
 @autobind
@@ -55,13 +56,21 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				this.setState({
 					submitError: data,
 				});
+
+				Keen.recordEvent('form_submission', {
+					success: true,
+				});
 			} else {
 				log('Got that response from the server. Should be all good.');
 				// @FIXME This could be better
 				this.setState({
-					success: true,
+					success: false,
 				});
 				this.props.setSuccess(true);
+
+				Keen.recordEvent('form_submission', {
+					success: true,
+				});
 			}
 		} else {
 			log("Psst. Mate. Not gonna work like that. Here's a bunch of error messages");
@@ -73,6 +82,13 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 			this.setState({
 				errorTypes: contactErrors.map(err => err.type),
 				errorMessages,
+			});
+
+			Keen.recordEvent('incomplete_form', {
+				email,
+				subject,
+				captcha,
+				message,
 			});
 		}
 	}

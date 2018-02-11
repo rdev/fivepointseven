@@ -8,6 +8,7 @@ import ProjectBrief from '../components/work-page/ProjectBrief';
 import ProjectList from '../components/work-page/ProjectList';
 import Logo from '../components/Logo';
 import portfolioItems from '../lib/portfolio-items';
+import Keen from '../lib/keen';
 import { sleep, addClass, removeClass, isMobileDevice } from '../lib/utils';
 import { log } from '../lib/log';
 
@@ -30,6 +31,10 @@ export default class WorkPage extends React.Component<{}, WorkState> {
 			await sleep(0.4);
 			removeClass('work-box-project-info', 'framework-selection-progress');
 			removeClass('work-box-project-image', 'cross-disolve');
+
+			Keen.recordEvent('portfolio_project_selected', {
+				name: selectedProject.name,
+			});
 		}
 	}
 

@@ -7,7 +7,7 @@ import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting, log } from '../lib/log';
 
-Router.onAppUpdated = (nextUrl) => {
+Router.onAppUpdated = nextUrl => {
 	// persist the local state
 	window.location.href = nextUrl;
 };
@@ -54,7 +54,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 			}
 		}
 
-		Keen.recordEvent('pageviews', {});
+		Keen.recordEvent('pageviews');
 	}
 
 	setLinksClass() {

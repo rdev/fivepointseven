@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import autobind from 'autobind-decorator';
+import Keen from '../../lib/keen';
 import { sleep, addClass, removeClass } from '../../lib/utils';
 import { log } from '../../lib/log';
 import frameworks from '../../lib/frameworks-and-tools';
@@ -35,6 +36,10 @@ export default class FrameworksModal extends React.Component<{}, FrameworksState
 
 		await sleep(0.4);
 		removeClass('framework-info', 'framework-selection-progress');
+
+		Keen.recordEvent('framework_selected', {
+			name: selectedItem,
+		});
 	}
 
 	render() {
