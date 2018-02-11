@@ -8,8 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"production": "cross-env NODE_ENV=production node server.js",
-		"prettier":
-			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
+		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
 		"test": "run-p lint flow",
 		"flow:start": "flow start",
@@ -29,6 +28,7 @@
 		"body-parser": "^1.18.2",
 		"common-tags": "^1.7.2",
 		"compression": "^1.7.1",
+		"cross-env": "^5.1.3",
 		"dotenv": "^4.0.0",
 		"email-validator": "^1.1.1",
 		"express": "^4.16.2",
@@ -81,6 +81,9 @@
 		}
 	},
 	"babel": {
-		"presets": ["next/babel", "vave"]
+		"presets": [
+			"next/babel",
+			"vave"
+		]
 	}
 }
