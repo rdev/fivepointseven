@@ -180,16 +180,9 @@ export default () => (
 			<section>
 				<h3>Docker</h3>
 				<p>
-					The site is using Docker for deployment. After the CI build is done, it uses my
-					little package ”
-					<a
-						href="https://github.com/rdev/dockerpuller"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						dockerpuller
-					</a>
-					” to execute the deployment.
+					The site is using Docker for deployment. There’s really not much to tell here.
+					After the CI build is done it packages app into a container and pushes it to the
+					registry.
 				</p>
 			</section>
 		</section>

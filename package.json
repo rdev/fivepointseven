@@ -82,13 +82,5 @@
 	},
 	"babel": {
 		"presets": ["next/babel", "vave"]
-	},
-	"config": {
-		"dockerpuller": {
-			"host": "https://missioncontrol.fivepointseven.com/docker",
-			"image": "fivepointseven/fivepointseven",
-			"name": "fivepointseven",
-			"ports": "3000:3000"
-		}
 	}
 }

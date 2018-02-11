@@ -5,6 +5,8 @@ branches:
   only:
     - master
 cache: yarn
+services:
+  - docker
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s
   - export PATH="$HOME/.yarn/bin:$PATH"
@@ -13,6 +15,7 @@ install:
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
+  - npm install -g dockerpuller
 script:
   - npm run test
 after_success:
@@ -20,4 +23,7 @@ after_success:
   - sed -i "s/CI_ENV_KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
   - sed -i "s/CI_ENV_KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
   - sed -i "s/CI_ENV_GA_ID/${GA_ID}/g" ./lib/keen.js
-  - npm run build
+  - echo $TELEGRAM_TOKEN > .env
+  - echo $TELEGRAM_ID >> .env
+  - docker build -t fivepointseven/fivepointseven .
+  - docker push fivepointseven/fivepointseven

@@ -9,7 +9,7 @@ COPY . /app
 RUN yarn config set no-progress true
 RUN yarn --silent
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 RUN yarn build
 

@@ -2,7 +2,7 @@
 
 This is a repo of my personal website - [fivepointseven.com](https://fivepointseven.com).
 
-[![Vave Code Style](https://img.shields.io/badge/code_style-vave-21DFEA.svg)](https://github.com/fivepointseven/vave) [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/license-CC%20BY--NC--ND-orange.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![Build Status](https://travis-ci.org/rdev/fivepointseven.svg?branch=master)](https://travis-ci.org/rdev/fivepointseven) [![Maintainability](https://api.codeclimate.com/v1/badges/299ceb809cf3e787b5f7/maintainability)](https://codeclimate.com/github/rdev/fivepointseven/maintainability) [![Vave Code Style](https://img.shields.io/badge/code_style-vave-21DFEA.svg)](https://github.com/fivepointseven/vave) [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/license-CC%20BY--NC--ND-orange.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ## What
 
