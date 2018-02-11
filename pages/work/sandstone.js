@@ -69,10 +69,7 @@ export default () => (
 				<p>
 					I didn’t want to build a whole new massive thing that everyone on the team would
 					have to learn. After all this library is just the utility, because you know,
-					”use the platform”
-					<span role="img" aria-label="trademark-symbol">
-						™️
-					</span>.
+					”use the platform™”.
 					<br />
 					<br />
 					And there’s a framework out there that also does components that you probably
@@ -301,12 +298,9 @@ export default () => (
 					>
 						CustomEvents
 					</a>{' '}
-					specification (remember, ”use the platform”
-					<span role="img" aria-label="trademark-symbol">
-						™️
-					</span>) and it’s extremely simple to use. Let’s say you want a button component
-					to change the color of a header in another component. Here’s how you would write
-					that with Sandstone:
+					specification (remember, ”use the platform™”) and it’s extremely simple to use.
+					Let’s say you want a button component to change the color of a header in another
+					component. Here’s how you would write that with Sandstone:
 				</p>
 				<Highlight className="jsx">
 					{stripIndent`

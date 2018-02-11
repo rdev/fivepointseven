@@ -9,7 +9,7 @@ export default ({ project }: CaseStudyHeader) => (
 		/>
 		<header style={{ backgroundColor: project.color }}>
 			<div>
-				<h1>{project.name}</h1>
+				<h1>{project.name.toLowerCase()}</h1>
 				<span>{project.brief}</span>
 			</div>
 			<img src="/static/mouse.svg" alt="scroll-down" />

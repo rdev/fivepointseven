@@ -39,7 +39,7 @@ export default class ProjectBrief extends React.Component<BriefProps, {}> {
 				<div id="work-box-project-info" className="work-box-project-info">
 					<div className="brief">
 						<h2>
-							{project.name}
+							{project.name.toLowerCase()}
 							<span>for {project.client}</span>
 						</h2>
 						<p>

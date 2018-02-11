@@ -18,7 +18,7 @@ const ProjectList = ({ selectedProject, portfolioItems, selectItem }: ProjectLis
 						selectItem(item);
 					}}
 				>
-					{item.name}
+					{item.name.toLowerCase()}
 				</a>
 				<br />
 				<br />
