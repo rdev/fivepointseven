@@ -6,11 +6,16 @@ export default ({ caseStudy }: MTProps) => (
 		{/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
 		<meta
 			name="description"
-			content={`${caseStudy || 'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
+			content={`${caseStudy ||
+				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
 		/>
 		<meta property="og:title" content="Max Rovensky" />
-		<meta property="og:description" content={`${caseStudy || 'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`} />
-		<meta property="og:image" content="/static/compass-fill.png" />
+		<meta
+			property="og:description"
+			content={`${caseStudy ||
+				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
+		/>
+		<meta property="og:image" content="/static/preview-img.jpg" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="/static/favicons/apple-icon-72x72.png" />
