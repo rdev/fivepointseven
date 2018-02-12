@@ -8,6 +8,12 @@ import ErrorMessage from './ErrorMessage';
 
 @autobind
 export default class ContactForm extends React.Component<FormProps, FormState> {
+	static logSocialLink(name: string) {
+		Keen.recordEvent('social_link', {
+			name,
+		});
+	}
+
 	state = { errorTypes: [], errorMessages: {}, submitError: null };
 
 	email: ?HTMLInputElement;
@@ -161,19 +167,19 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				{/* Because I'm responsible and don't want AdBlock to break my website
 							I'm not gonna name ↓ this 'social-buttons' */}
 				<div className="them-links">
-					<a href="/_/linkedin">
+					<a href="/_/linkedin" onClick={() => ContactForm.logSocialLink('linkedin')}>
 						<img src="/static/social/linkedin.svg" alt="linkedin" />
 					</a>
-					<a href="/_/twitter">
+					<a href="/_/twitter" onClick={() => ContactForm.logSocialLink('twitter')}>
 						<img src="/static/social/twitter.svg" alt="twitter" />
 					</a>
-					<a href="/_/github">
+					<a href="/_/github" onClick={() => ContactForm.logSocialLink('github')}>
 						<img src="/static/social/github.svg" alt="github" />
 					</a>
-					<a href="/_/telegram">
+					<a href="/_/telegram" onClick={() => ContactForm.logSocialLink('telegram')}>
 						<img src="/static/social/telegram.svg" alt="telegram" />
 					</a>
-					<a href="/_/medium">
+					<a href="/_/medium" onClick={() => ContactForm.logSocialLink('medium')}>
 						<img src="/static/social/medium.svg" alt="medium" />
 					</a>
 				</div>
