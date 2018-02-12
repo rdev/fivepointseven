@@ -8,6 +8,11 @@ declare type Page = {
 
 declare type LinksProps = {
 	active: string,
+	pathname?: string,
+	query?: {
+		nospin: boolean,
+		noLinksAnimation: boolean,
+	},
 };
 
 declare type LinksState = {
@@ -21,4 +26,4 @@ declare type InitialPropsQuery = {
 
 declare type MTProps = {
 	caseStudy?: string,
-}
+};

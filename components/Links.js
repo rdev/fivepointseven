@@ -19,8 +19,11 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 		linksClass: this.props.active === 'hello' ? 'links hidden' : 'links',
 	};
 
-	componentDidMount() {
+	componentWillMount() {
 		this.setLinksClass();
+	}
+
+	componentDidMount() {
 		Router.prefetch('/about');
 		Router.prefetch('/work');
 		Router.prefetch('/contact');
@@ -35,9 +38,11 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 	}
 
 	setLinksClass() {
+		const { pathname, query } = this.props;
+
 		this.setState({
 			linksClass:
-				Router.pathname === '/' && !Router.query.nospin && !Router.query.noLinksAnimation
+				pathname && query && !query.nospin && !query.noLinksAnimation
 					? 'links links-animated'
 					: 'links',
 		});

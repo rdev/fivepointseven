@@ -7,7 +7,11 @@ import Links from '../components/Links';
 import { log } from '../lib/log';
 import Keen from '../lib/keen';
 
-export default class MainPage extends React.Component<{}, IndexState> {
+export default class MainPage extends React.Component<IndexProps, IndexState> {
+	static async getInitialProps({ pathname, query }: IndexProps) {
+		return { pathname, query };
+	}
+
 	state = {
 		disableSpin: false,
 	};
@@ -36,17 +40,15 @@ export default class MainPage extends React.Component<{}, IndexState> {
 					transform: rotateY(0deg) scale(1);
 					opacity: 1;
 				}
-
-				.links.hidden {
-					display: flex;
-				}
 			</style>`;
+
+		const { pathname, query } = this.props;
 
 		return (
 			<Page noscriptContent={noscriptContent}>
 				<div className="home-container">
 					<HomeWelcome animated={!this.state.disableSpin} />
-					<Links active="hello" />
+					<Links active="hello" pathname={pathname} query={query} />
 				</div>
 			</Page>
 		);
