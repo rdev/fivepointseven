@@ -12,24 +12,15 @@
 		margin-top: 10%;
 
 		input {
-			font-size: 2.25rem;
+			font-size: 2.2rem;
 			padding-left: 0;
-		}
-
-		textarea {
-			height: 100px;
-
-			&:active,
-			&:focus,
-			&:not(:placeholder-shown) {
-				// 👆🏻 Does this count as dirty?
-				height: 196px;
-				padding-top: 0;
-			}
+			margin-bottom: 8px;
 		}
 
 		button {
+			margin-top: 10px;
 			font-size: 3rem;
+			margin-right: 0;
 		}
 	}
 

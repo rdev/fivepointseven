@@ -4,13 +4,13 @@
 			transform: translateY(0);
 		}
 		100% {
-			transform: translateY(-100px);
+			transform: translateY(-35px);
 		}
 	}
 
 	@keyframes compass-push-about-home {
 		0% {
-			transform: translateY(-100px);
+			transform: translateY(-35px);
 		}
 		100% {
 			transform: translateY(0px);
@@ -22,7 +22,7 @@
 			transform: translateY(-5vh);
 		}
 		100% {
-			transform: translateY(-100px);
+			transform: translateY(-35px);
 		}
 	}
 
@@ -46,7 +46,7 @@
 
 	@keyframes compass-push-about-contact {
 		0% {
-			transform: translateY(-100px);
+			transform: translateY(-35px);
 		}
 		100% {
 			transform: translateY(-5vh);
@@ -55,7 +55,7 @@
 
 	@keyframes compass-push-work-contact {
 		0% {
-			transform: translateY(-100px);
+			transform: translateY(-35px);
 			opacity: 0;
 		}
 		1% {

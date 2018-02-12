@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export default ({ caseStudy }: MTProps) => (
 	<React.Fragment>
-		{/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta
 			name="description"
 			content={`${caseStudy ||

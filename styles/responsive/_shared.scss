@@ -1,6 +1,6 @@
 @media only screen and (max-device-width: 667px) {
 	html {
-		font-size: 26px;
+		font-size: 10px;
 		-webkit-overflow-scrolling: touch;
 	}
 
@@ -12,13 +12,17 @@
 		grid-template-columns: 1fr 10fr 1fr;
 	}
 
+	.home-heading h2 {
+		font-size: 2rem;
+	}
+
 	.navigation,
 	.links {
 		width: 100%;
-	}
 
-	.links a {
-		font-size: 2.5rem;
+		a {
+			font-size: 2.3rem;
+		}
 	}
 
 	.compass {

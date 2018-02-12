@@ -1,0 +1,33 @@
+@media only screen and (max-device-width: 667px) {
+	.case-study {
+		header,
+		main {
+			grid-template-columns: 2fr 8fr 2fr;
+		}
+
+		header img {
+			display: none;
+		}
+
+		.night-mode-switch {
+			left: 0;
+
+			span {
+				display: none;
+			}
+
+			&:hover span {
+				display: none;
+			}
+		}
+	}
+
+	.case-study-back-button {
+		left: 16px;
+		top: 10px;
+
+		svg {
+			width: 16px;
+		}
+	}
+}

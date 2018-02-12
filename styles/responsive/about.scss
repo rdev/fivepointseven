@@ -1,6 +1,6 @@
 @media only screen and (max-device-width: 667px) {
 	.about-container .compass {
-		transform: translateY(-100px);
+		transform: translateY(-35px);
 		opacity: 1;
 		left: 40vw;
 	}
@@ -17,34 +17,14 @@
 		height: 80vh;
 		left: 5vw;
 		grid-template-areas: 'list list';
-
-		h2 {
-			font-size: 3rem;
-		}
 	}
 
 	.frameworks-modal-left-pane {
 		grid-area: list;
 		height: auto;
-		@include padding-horizontal(80px);
 	}
 
 	.frameworks-modal-right-pane {
 		display: none;
-	}
-
-	.framework {
-		font-size: 2.4rem;
-	}
-
-	.modal-close {
-		top: 50px;
-		right: 40px;
-		width: 50px;
-		height: 50px;
-
-		img {
-			width: 100%;
-		}
 	}
 }

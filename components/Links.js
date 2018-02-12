@@ -31,29 +31,6 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 		// Let's get to service worker goodness
 		initServiceWorker();
 
-		// Reeeeally not a fan of this, I think this approach is butt ugly
-		// But other approaches are even buttier and uglier
-		const isSafari = !!navigator.userAgent.match(/Version\/[\d.]+.*Safari/);
-		const isIPhone = /iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-		if (isSafari && isIPhone) {
-			const container = document.querySelector("div[class*='container']");
-			const frameworksModal = document.getElementById('frameworks-modal');
-			const workBox = document.getElementById('work-box');
-
-			if (container) {
-				container.style.height = '80vh';
-			}
-
-			if (Router.pathname === '/about' && frameworksModal) {
-				frameworksModal.style.height = '70vh';
-			}
-
-			if (Router.pathname === '/work' && workBox) {
-				workBox.style.height = '62vh';
-			}
-		}
-
 		Keen.recordEvent('pageviews');
 	}
 
