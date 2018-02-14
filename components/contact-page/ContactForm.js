@@ -70,7 +70,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				log('Got that response from the server. Should be all good.');
 				// @FIXME This could be better
 				this.setState({
-					success: false,
+					success: true,
 				});
 				this.props.setSuccess(true);
 
