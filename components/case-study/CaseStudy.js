@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 import { log } from '../../lib/log';
 import Keen from '../../lib/keen';
 import GoogleAnalytics from '../GoogleAnalytics';
@@ -10,6 +11,11 @@ import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
 import initServiceWorker from '../../lib/service-worker';
 import stylesheet from '../../styles/styles.scss';
+
+Router.onAppUpdated = (nextUrl) => {
+	// persist the local state
+	window.location.href = nextUrl;
+};
 
 export default class CaseStudy extends React.Component<CSProps, CSState> {
 	state = {
