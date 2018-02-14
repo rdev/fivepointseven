@@ -27,6 +27,7 @@ export default class ContactPage extends React.Component<{}, ContactState> {
 						className={`form-success-checkmark ${
 							this.state.success ? 'contact-checkmark-fade-in' : ''
 						}`}
+						id="contact-checkmark"
 					>
 						<img src="/static/form-success.svg" alt="form-success" />
 					</div>
