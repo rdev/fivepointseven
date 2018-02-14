@@ -16,6 +16,8 @@ export default ({ caseStudy }: MTProps) => (
 				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
 		/>
 		<meta property="og:image" content="/static/preview-img.jpg" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png" />
 		<link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-icon-60x60.png" />
 		<link rel="apple-touch-icon" sizes="72x72" href="/static/favicons/apple-icon-72x72.png" />
@@ -54,10 +56,8 @@ export default ({ caseStudy }: MTProps) => (
 		<link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="96x96" href="/static/favicons/favicon-96x96.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-		<link rel="manifest" href="/static/manifest.json" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
-		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 		<link rel="shortcut icon" href="/static/favicons/favicon.ico" type="image/x-icon" />
 		<link rel="icon" type="image/png" href="/static/favicons/apple-icon.png" />
+		<link rel="manifest" href="/static/manifest.json" />
 	</React.Fragment>
 );

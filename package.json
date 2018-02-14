@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"production": "cross-env NODE_ENV=production node server.js",
-		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
+		"prettier":
+			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
 		"test": "run-p lint flow",
 		"flow:start": "flow start",
@@ -46,6 +47,8 @@
 	"devDependencies": {
 		"babel-eslint": "^8.2.1",
 		"babel-preset-vave": "^0.3.0",
+		"enzyme": "^3.3.0",
+		"enzyme-adapter-react-16": "^1.1.1",
 		"eslint": "^4.15.0",
 		"eslint-config-airbnb": "^16.1.0",
 		"eslint-config-vave": "^0.4.0",
@@ -58,7 +61,8 @@
 		"eslint-plugin-security": "^1.4.0",
 		"flow-bin": "^0.65.0",
 		"flow-typed": "^2.2.3",
-		"jest": "^22.0.4",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^22.2.2",
 		"node-sass": "^4.7.2",
 		"npm-run-all": "^4.1.2",
 		"postcss-loader": "^2.0.10",
@@ -81,9 +85,32 @@
 		}
 	},
 	"babel": {
-		"presets": [
-			"next/babel",
-			"vave"
-		]
+		"env": {
+			"development": {
+				"presets": ["next/babel", "vave"]
+			},
+			"production": {
+				"presets": ["next/babel", "vave"]
+			},
+			"test": {
+				"presets": [
+					[
+						"env",
+						{
+							"modules": "commonjs"
+						}
+					],
+					"next/babel",
+					"vave"
+				]
+			}
+		}
+	},
+	"jest": {
+		"setupFiles": ["<rootDir>/jest.setup.js"],
+		"testPathIgnorePatterns": ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+		"moduleNameMapper": {
+			"\\.(css|scss)$": "identity-obj-proxy"
+		}
 	}
 }

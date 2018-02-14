@@ -32,7 +32,7 @@ export default class FrameworksModal extends React.Component<{}, FrameworksState
 		addClass('framework-info', 'framework-selection-progress');
 
 		await sleep(0.3);
-		this.setState({ selectedItem }); // No need to trippledot the only item
+		this.setState({ selectedItem });
 
 		await sleep(0.4);
 		removeClass('framework-info', 'framework-selection-progress');
