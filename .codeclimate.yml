@@ -26,9 +26,6 @@ checks:
       threshold: 4
   similar-code:
     enabled: false
-plugins:
-  eslint:
-    enabled: true
 exclude_patterns:
 - "config/"
 - "db/"
