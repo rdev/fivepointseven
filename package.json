@@ -11,7 +11,9 @@
 		"prettier":
 			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
-		"test": "run-p lint flow",
+		"test": "run-p lint flow jest",
+		"test:coverage": "jest --coverage",
+		"jest": "jest",
 		"flow:start": "flow start",
 		"flow": "flow"
 	},
