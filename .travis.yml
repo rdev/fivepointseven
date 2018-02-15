@@ -20,6 +20,7 @@ script:
   - npm run test:coverage
 after_success:
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run codecov; fi
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD; fi
   - sed -i "s/CI_ENV_KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
   - sed -i "s/CI_ENV_KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
