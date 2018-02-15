@@ -112,6 +112,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				<input
 					type="email"
 					name="email"
+					id="email"
 					placeholder="whatsup@gmail.com"
 					className={errorTypes.includes('email') ? 'error' : null}
 					ref={(ref) => {
@@ -125,6 +126,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				<input
 					type="text"
 					name="subject"
+					id="subject"
 					placeholder="bottom line"
 					className={errorTypes.includes('subject') ? 'error' : null}
 					ref={(ref) => {
@@ -139,6 +141,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				<input
 					type="text"
 					name="captcha"
+					id="captcha"
 					placeholder="say &quot;elon musk&quot;"
 					className={errorTypes.includes('captcha') ? 'error' : null}
 					ref={(ref) => {
@@ -151,6 +154,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				</span>
 				<textarea
 					name="message"
+					id="message"
 					minLength={10}
 					placeholder="let's talk business..."
 					className={errorTypes.includes('message') ? 'error' : null}
