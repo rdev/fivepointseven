@@ -3,7 +3,7 @@ import * as React from 'react';
 
 export default () => (
 	<React.Fragment>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=CI_ENV:GA_ID" />
+		<script async src="https://www.googletagmanager.com/gtag/js?id=CI_ENV_GA_ID" />
 		<script
 			dangerouslySetInnerHTML={{
 				// Imma leave Google Analytics here for now
