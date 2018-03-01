@@ -94,6 +94,11 @@
 		opacity: 0.5;
 		margin-bottom: 20px;
 	}
+
+	&::-webkit-scrollbar {
+		width: 0px;
+		background: transparent;
+	}
 }
 
 .work-box-project-image {
@@ -147,6 +152,11 @@
 		&.selected:before {
 			transform: translateX(0);
 		}
+	}
+
+	&::-webkit-scrollbar {
+		width: 0px;
+		background: transparent;
 	}
 }
 

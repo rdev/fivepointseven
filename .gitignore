@@ -2,6 +2,7 @@ node_modules
 .next
 .env
 *.sh
+.DS_Store
 
 # Nope
 *.woff
