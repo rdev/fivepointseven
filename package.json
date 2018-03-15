@@ -6,10 +6,9 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "cross-env NODE_ENV=production node server.js",
-		"next-start": "next start",
-		"deploy":
-			"now -e TELEGRAM_ID -e TELEGRAM_TOKEN -e NODE_ENV=production --token $NOW_TOKEN --npm --force",
+		"production": "cross-env NODE_ENV=production node server.js",
+		"start": "next start",
+		"deploy": "now --token $NOW_TOKEN --docker",
 		"alias": "now alias --token=$NOW_TOKEN",
 		"prettier":
 			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
