@@ -26,7 +26,7 @@ async function startServer() {
 		next();
 	});
 
-	app.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
+	server.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
 		bot.processUpdate(req.body);
 		res.sendStatus(200);
 	});
