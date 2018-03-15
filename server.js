@@ -4,7 +4,7 @@ const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const nextjs = require('next');
-const { socialRedirect, contact } = require('./lib/telegram');
+const { bot, socialRedirect, contact } = require('./lib/telegram');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -24,6 +24,11 @@ async function startServer() {
 		res.setHeader('X-Powered-By', 'The Force');
 		res.setHeader('X-Why-Would-You-Look-Here', 'No, but for real?');
 		next();
+	});
+
+	app.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
+		bot.processUpdate(req.body);
+		res.sendStatus(200);
 	});
 
 	server.use('/service-worker.js', (req, res) => {
