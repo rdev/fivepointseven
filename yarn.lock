@@ -6585,6 +6585,10 @@ normalize-url@2.0.1:
     query-string "^5.0.1"
     sort-keys "^2.0.0"
 
+now@^10.1.6:
+  version "10.1.6"
+  resolved "https://registry.yarnpkg.com/now/-/now-10.1.6.tgz#58e4fce695588bd3ff5ebeee32d44b0e971b311a"
+
 "npm-package-arg@^3.0.0 || ^4.0.0 || ^5.0.0":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/npm-package-arg/-/npm-package-arg-5.1.2.tgz#fb18d17bb61e60900d6312619919bd753755ab37"
