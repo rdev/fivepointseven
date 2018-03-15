@@ -3,32 +3,33 @@ node_js:
   - "9.2.0"
 branches:
   only:
-    - master
+  - master
 cache: yarn
 services:
-  - docker
+- docker
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s
-  - export PATH="$HOME/.yarn/bin:$PATH"
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s
+- export PATH="$HOME/.yarn/bin:$PATH"
 install:
-  - yarn
+- yarn
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - npm install -g dockerpuller
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
 script:
-  - npm run test:coverage
+- npm run test:coverage
 after_success:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run codecov; fi
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD; fi
-  - sed -i "s/CI_ENV_KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
-  - sed -i "s/CI_ENV_KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
-  - sed -i "s/CI_ENV_GA_ID/${GA_ID}/g" ./components/GoogleAnalytics.js
-  - echo TELEGRAM_TOKEN=$TELEGRAM_TOKEN > .env
-  - echo TELEGRAM_ID=$TELEGRAM_ID >> .env
-  - wget ${ASSETS_URL}/font-main.woff -q -O static/font-main.woff
-  - wget ${ASSETS_URL}/font-light.woff -q -O static/font-light.woff
-  - wget ${ASSETS_URL}/font-monospace.woff -q -O static/font-monospace.woff
-  - docker build -t fivepointseven/fivepointseven .
-  - docker push fivepointseven/fivepointseven
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm run codecov; fi
+- sed -i "s/CI_ENV_KEEN_PROJECT_ID/${KEEN_PROJECT_ID}/g" ./lib/keen.js
+- sed -i "s/CI_ENV_KEEN_WRITE_KEY/${KEEN_WRITE_KEY}/g" ./lib/keen.js
+- sed -i "s/CI_ENV_GA_ID/${GA_ID}/g" ./components/GoogleAnalytics.js
+- echo TELEGRAM_TOKEN=$TELEGRAM_TOKEN > .env
+- echo TELEGRAM_ID=$TELEGRAM_ID >> .env
+- wget ${ASSETS_URL}/font-main.woff -q -O static/font-main.woff
+- wget ${ASSETS_URL}/font-light.woff -q -O static/font-light.woff
+- wget ${ASSETS_URL}/font-monospace.woff -q -O static/font-monospace.woff
+- npm run deploy
+- npm run alias
+env:
+  global:
+    secure: WB3oGrWmJDo0OIsXttov5P+Yh19Xu83ABw4lR6CHYhP28yPFm94ZHkE3l9z6EjA+o8UUvCYWZgbOTSADdlcvjYaXSEqkWogyt+wEfQcB6rPZ+hfKbRlGNG5SfcQW3TbI0y7K5kk9U9+cF0qGtxMlFKb0Y5nCPXQpHCQz9GLK2c39p9cEippqFWV09zRVB74et/egF1URftTVZqmAsQ2KTQdC4A+5txVtA/ELH0/qabsLOZHfSDRp4cmnDK/i/8r5MpduALQNbaxmL1rt7Acu1u0d+c8mEiAbKBOXOJtI7cHdWZWk3+bFbT1cjdGWp4xf+oEjkiW1HxKGqbaKhhb6Hl4Dx3oSedf9DMB19vOvczg20hSubpBoDCvFhmhZ0Sld7BY9Rz111+8iI1Pmutj9KOnYdephhmZKAond3z7c1ozFwxP7C6WCb2YjyJwhhCMecBcfF1JlONlsp5LxIfyLJ58ifag/+I872e4fDFRjtdnipax+3sH9b/OzAkiRUS7gsn4DpomTEhQ5vLQYdxWTaO+pW0HHfUofx6chAEVub0Ghpye1XjPkx8a/bRcZEiadQxU2kqfaG0DIOELh1ilC3S2BQVjx/Ik6CFxOFkjOtQrK7Q1E3bivcB+1jI2dwgwNI9RxVAt2NZnR6rOVSvQJu/tToPioWCMEoOY+kz4efdM=
