@@ -178,11 +178,14 @@ export default () => (
 				</p>
 			</section>
 			<section>
-				<h3>Docker</h3>
+				<h3>Deployment</h3>
 				<p>
-					The site is using Docker for deployment. There’s really not much to tell here.
-					After the CI build is done it packages app into a container and pushes it to the
-					registry.
+					The site is deployed to Zeit’s{' '}
+					<a href="http://zeit.co/now" target="_blank" rel="noopener noreferrer">
+						Now
+					</a>{' '}
+					platform. After the CI build is done, it puts all the secrets in place. builds a
+					Docker image and pushes it to Now.
 				</p>
 			</section>
 			<section>
