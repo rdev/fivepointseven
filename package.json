@@ -22,7 +22,8 @@
 	},
 	"now": {
 		"name": "fivepointseven",
-		"alias": "fivepointseven.com"
+		"alias": "fivepointseven.com",
+		"files": ["static/font-light.woff", "static/font-main.woff", "static/font-monospace.woff"]
 	},
 	"prettier": {
 		"printWidth": 100,
