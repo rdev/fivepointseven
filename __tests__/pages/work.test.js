@@ -35,16 +35,6 @@ describe('Contact Page', () => {
 		expect(wrapper.find('.work-container')).toHaveLength(1);
 	});
 
-	test('Select item on mobile device', () => {
-		utils.isMobileDevice.mockReturnValueOnce(true);
-		const wrapper = shallow(<WorkPage />);
-		const instance = wrapper.instance();
-
-		instance.selectItem({});
-
-		expect(utils.isMobileDevice).toHaveBeenCalled();
-	});
-
 	test('Select item', async () => {
 		utils.isMobileDevice.mockReturnValue(false);
 		const wrapper = shallow(<WorkPage />);
