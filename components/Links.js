@@ -7,11 +7,6 @@ import { sleep, addClass } from '../lib/utils';
 import Keen from '../lib/keen';
 import { greeting, log } from '../lib/log';
 
-Router.onAppUpdated = (nextUrl) => {
-	// persist the local state
-	window.location.href = nextUrl;
-};
-
 @autobind
 export default class Links extends React.Component<LinksProps, LinksState> {
 	state = {
