@@ -27,23 +27,19 @@ export default class WorkPage extends React.Component<WorkProps, WorkState> {
 	};
 
 	async selectItem(selectedProject: Project) {
-		if (isMobileDevice()) {
-			Router.push(`/work/${selectedProject.slug}`);
-		} else {
-			log("We're not on mobile, let's do the animation");
-			addClass('work-box-project-info', 'framework-selection-progress');
-			addClass('work-box-project-image', 'cross-disolve');
-			await sleep(0.3);
-			this.setState({ selectedProject }); // No need to trippledot the only item
+		log("We're not on mobile, let's do the animation");
+		addClass('work-box-project-info', 'framework-selection-progress');
+		addClass('work-box-project-image', 'cross-disolve');
+		await sleep(0.3);
+		this.setState({ selectedProject }); // No need to trippledot the only item
 
-			await sleep(0.4);
-			removeClass('work-box-project-info', 'framework-selection-progress');
-			removeClass('work-box-project-image', 'cross-disolve');
+		await sleep(0.4);
+		removeClass('work-box-project-info', 'framework-selection-progress');
+		removeClass('work-box-project-image', 'cross-disolve');
 
-			Keen.recordEvent('portfolio_project_selected', {
-				name: selectedProject.name,
-			});
-		}
+		Keen.recordEvent('portfolio_project_selected', {
+			name: selectedProject.name,
+		});
 	}
 
 	render() {

@@ -6,12 +6,11 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"production": "cross-env NODE_ENV=production node server.js",
-		"start": "next start",
+		"next": "next start",
+		"start": "cross-env NODE_ENV=production node server.js",
 		"deploy": "now --token $NOW_TOKEN --docker",
 		"alias": "now alias --token=$NOW_TOKEN",
-		"prettier":
-			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
+		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
 		"test": "run-p lint flow jest",
 		"test:coverage": "jest --coverage",
@@ -22,8 +21,7 @@
 	},
 	"now": {
 		"name": "fivepointseven",
-		"alias": "fivepointseven.com",
-		"files": ["static/font-light.woff", "static/font-main.woff", "static/font-monospace.woff"]
+		"alias": "fivepointseven.com"
 	},
 	"prettier": {
 		"printWidth": 100,
