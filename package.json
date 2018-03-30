@@ -8,9 +8,10 @@
 		"build": "next build",
 		"next": "next start",
 		"start": "cross-env NODE_ENV=production node server.js",
-		"deploy": "now --token $NOW_TOKEN --docker",
+		"deploy": "now --token $NOW_TOKEN",
 		"alias": "now alias --token=$NOW_TOKEN",
-		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
+		"prettier":
+			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
 		"test": "run-p lint flow jest",
 		"test:coverage": "jest --coverage",
