@@ -180,12 +180,17 @@ export default () => (
 			<section>
 				<h3>Deployment</h3>
 				<p>
-					The site is deployed to Zeit’s{' '}
+					The site was originally deployed with Docker on Google Cloud Platform, but some
+					time ago I moved it to Zeit’s{' '}
 					<a href="http://zeit.co/now" target="_blank" rel="noopener noreferrer">
 						Now
 					</a>{' '}
-					platform. After the CI build is done, it puts all the secrets in place. builds a
-					Docker image and pushes it to Now.
+					platform. Now is a beautiful way to deploy Node.js applications and it removes
+					all the headache from the deployment process.
+					<br />
+					<br />
+					After the CI is done with the build, it puts all the secrets in place, deploys
+					the website to Now and aliases the new deployment to the domain. Smoooooth.
 				</p>
 			</section>
 			<section>

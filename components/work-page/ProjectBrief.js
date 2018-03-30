@@ -8,6 +8,9 @@ import { log } from '../../lib/log';
 @autobind
 export default class ProjectBrief extends React.Component<BriefProps, {}> {
 	async goToProject(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Watch this crazy transition!');
 

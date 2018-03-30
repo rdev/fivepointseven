@@ -22,9 +22,16 @@ async function startServer() {
 
 	server.use((req, res, next) => {
 		res.setHeader('X-Powered-By', 'The Force');
-		res.setHeader('X-Why-Would-You-Look-Here', 'No, but for real?');
+		res.setHeader('X-Why-Would-You-Even-Look-Here', 'No, but for real?');
 		next();
 	});
+	server.use(
+		'/static',
+		express.static(`${__dirname}/static`, {
+			maxAge: '30d',
+			immutable: true,
+		}),
+	);
 
 	server.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
 		bot.processUpdate(req.body);

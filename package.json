@@ -44,6 +44,7 @@
 		"express": "^4.16.2",
 		"glob": "^7.1.2",
 		"keen-tracking": "^1.4.0",
+		"mobile-detect": "^1.4.1",
 		"next": "^4.2.1",
 		"node-telegram-bot-api": "^0.30.0",
 		"node-where": "^1.1.0",
