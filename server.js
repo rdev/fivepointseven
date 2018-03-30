@@ -3,6 +3,7 @@ const { join } = require('path');
 const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const nextjs = require('next');
 const { bot, socialRedirect, contact } = require('./lib/telegram');
 
@@ -16,6 +17,15 @@ async function startServer() {
 
 	const server = express();
 
+	server.use(helmet());
+	server.use(helmet.contentSecurityPolicy({
+		directives: {
+			defaultSrc: ["'self'"],
+			scriptSrc: ["'self'", "'unsafe-inline'", 'www.googletagmanager.com', 'api.keen.io'],
+			connectSrc: ["'self'", 'www.googletagmanager.com', 'api.keen.io'],
+			styleSrc: ["'self'", "'unsafe-inline'"],
+		},
+	}));
 	server.use(compression());
 	server.use(bodyParser.json());
 	server.use(bodyParser.urlencoded({ extended: true }));

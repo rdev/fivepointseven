@@ -10,8 +10,7 @@
 		"start": "cross-env NODE_ENV=production node server.js",
 		"deploy": "now --token $NOW_TOKEN",
 		"alias": "now alias --token=$NOW_TOKEN",
-		"prettier":
-			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
+		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
 		"test": "run-p lint flow jest",
 		"test:coverage": "jest --coverage",
@@ -43,6 +42,7 @@
 		"email-validator": "^1.1.1",
 		"express": "^4.16.2",
 		"glob": "^7.1.2",
+		"helmet": "^3.12.0",
 		"keen-tracking": "^1.4.0",
 		"mobile-detect": "^1.4.1",
 		"next": "^4.2.1",
@@ -99,10 +99,16 @@
 	"babel": {
 		"env": {
 			"development": {
-				"presets": ["next/babel", "vave"]
+				"presets": [
+					"next/babel",
+					"vave"
+				]
 			},
 			"production": {
-				"presets": ["next/babel", "vave"]
+				"presets": [
+					"next/babel",
+					"vave"
+				]
 			},
 			"test": {
 				"presets": [
@@ -119,8 +125,13 @@
 		}
 	},
 	"jest": {
-		"setupFiles": ["<rootDir>/jest.setup.js"],
-		"testPathIgnorePatterns": ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+		"setupFiles": [
+			"<rootDir>/jest.setup.js"
+		],
+		"testPathIgnorePatterns": [
+			"<rootDir>/.next/",
+			"<rootDir>/node_modules/"
+		],
 		"moduleNameMapper": {
 			"\\.(css|scss)$": "identity-obj-proxy"
 		}
