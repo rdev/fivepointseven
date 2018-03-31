@@ -67,6 +67,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 				break;
 			case '/contact':
 				addClass('contact-form', 'push-back');
+				addClass('them-links', 'contact-links-fade-out');
 				addClass('contact-checkmark', 'push-back');
 				addClass('compass', 'compass-push-contact-about');
 
@@ -119,6 +120,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 				break;
 			case '/contact':
 				addClass('contact-form', 'push-back');
+				addClass('them-links', 'contact-links-fade-out');
 				addClass('contact-checkmark', 'push-back');
 				addClass('compass', 'fade-out');
 
@@ -211,6 +213,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 			case '/contact':
 				addClass('compass', 'compass-push-contact-home');
 				addClass('contact-form', 'push-back');
+				addClass('them-links', 'contact-links-fade-out');
 				addClass('contact-checkmark', 'push-back');
 
 				await sleep(1.2);

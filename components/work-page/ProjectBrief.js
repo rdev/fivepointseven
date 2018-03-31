@@ -49,7 +49,7 @@ export default class ProjectBrief extends React.Component<BriefProps, {}> {
 						<p>
 							{project.brief}
 							<a href={`/work/${project.slug}`} onClick={this.goToProject}>
-								take a look {'>'}
+								read the case {'>'}
 							</a>
 						</p>
 					</div>

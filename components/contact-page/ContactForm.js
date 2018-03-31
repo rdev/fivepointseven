@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import Head from 'next/head';
 import autobind from 'autobind-decorator';
 import contactValidation from '../../lib/contact-validation';
 import { log } from '../../lib/log';
@@ -17,8 +18,6 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 	state = { errorTypes: [], errorMessages: {}, submitError: null };
 
 	email: ?HTMLInputElement;
-	subject: ?HTMLInputElement;
-	captcha: ?HTMLInputElement;
 	message: ?HTMLTextAreaElement;
 
 	async handleSubmit(e: SyntheticEvent<*>) {
@@ -26,16 +25,9 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 		log("Let's validate all your stuff first.");
 
 		const email = this.email ? this.email.value : '';
-		const subject = this.subject ? this.subject.value : '';
-		const captcha = this.captcha ? this.captcha.value : '';
 		const message = this.message ? this.message.value : '';
 
-		const contactErrors = contactValidation({
-			email,
-			subject,
-			captcha,
-			message,
-		});
+		const contactErrors = contactValidation({ email, message });
 
 		if (contactErrors.length === 0) {
 			log("We good. Let's submit.");
@@ -46,12 +38,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 					'Content-Type': 'application/json',
 				},
 				method: 'POST',
-				body: JSON.stringify({
-					email,
-					subject,
-					captcha,
-					message,
-				}),
+				body: JSON.stringify({ email, message }),
 			});
 
 			const data = await res.text();
@@ -90,12 +77,7 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 				errorMessages,
 			});
 
-			Keen.recordEvent('incomplete_form', {
-				email,
-				subject,
-				captcha,
-				message,
-			});
+			Keen.recordEvent('incomplete_form', { email, message });
 		}
 	}
 
@@ -103,74 +85,51 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 		const { errorTypes, errorMessages } = this.state;
 
 		return (
-			<form
-				className={`contact-form ${this.state.success ? 'contact-form-push-back' : ''}`}
-				action="/contact"
-				method="POST"
-				id="contact-form"
-			>
-				<input
-					type="email"
-					name="email"
-					id="email"
-					placeholder="whatsup@gmail.com"
-					className={errorTypes.includes('email') ? 'error' : null}
-					ref={(ref) => {
-						this.email = ref;
-					}}
-					required
-				/>
-				<span className={errorTypes.includes('email') ? 'error' : null}>
-					{errorMessages.email}
-				</span>
-				<input
-					type="text"
-					name="subject"
-					id="subject"
-					placeholder="bottom line"
-					className={errorTypes.includes('subject') ? 'error' : null}
-					ref={(ref) => {
-						this.subject = ref;
-					}}
-					required
-					minLength={3}
-				/>
-				<span className={errorTypes.includes('subject') ? 'error' : null}>
-					{errorMessages.subject}
-				</span>
-				<input
-					type="text"
-					name="captcha"
-					id="captcha"
-					placeholder="say &quot;elon musk&quot;"
-					className={errorTypes.includes('captcha') ? 'error' : null}
-					ref={(ref) => {
-						this.captcha = ref;
-					}}
-					required
-				/>
-				<span className={errorTypes.includes('captcha') ? 'error' : null}>
-					{errorMessages.captcha}
-				</span>
-				<textarea
-					name="message"
-					id="message"
-					minLength={10}
-					placeholder="let's talk business..."
-					className={errorTypes.includes('message') ? 'error' : null}
-					ref={(ref) => {
-						this.message = ref;
-					}}
-					required
-				/>
-				<span className={errorTypes.includes('message') ? 'error' : null}>
-					{errorMessages.message}
-				</span>
-				<button onClick={this.handleSubmit}>shoot</button>
+			<React.Fragment>
+				<Head>
+					<script src="https://www.google.com/recaptcha/api.js" async defer />
+				</Head>
+				<form
+					className={`contact-form ${this.state.success ? 'contact-form-push-back' : ''}`}
+					action="/contact"
+					method="POST"
+					id="contact-form"
+				>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="whatsup@gmail.com"
+						className={errorTypes.includes('email') ? 'error' : null}
+						ref={(ref) => {
+							this.email = ref;
+						}}
+						required
+					/>
+					<span className={errorTypes.includes('email') ? 'error' : null}>
+						{errorMessages.email}
+					</span>
+					<textarea
+						name="message"
+						id="message"
+						minLength={10}
+						placeholder="let's discuss..."
+						className={errorTypes.includes('message') ? 'error' : null}
+						ref={(ref) => {
+							this.message = ref;
+						}}
+						required
+					/>
+					<span className={errorTypes.includes('message') ? 'error' : null}>
+						{errorMessages.message}
+					</span>
+					<button onClick={this.handleSubmit}>shoot</button>
 
+					<ErrorMessage message={this.state.submitError} />
+				</form>
 				{/* Because I'm responsible and don't want AdBlock to break my website
-							I'm not gonna name ↓ this 'social-buttons' */}
-				<div className="them-links">
+					I'm not gonna name ↓ this 'social-buttons' */}
+				<div className="them-links" id="them-links">
 					<a href="/_/linkedin" onClick={() => ContactForm.logSocialLink('linkedin')}>
 						<img src="/static/social/linkedin.svg" alt="linkedin" />
 					</a>
@@ -183,13 +142,11 @@ export default class ContactForm extends React.Component<FormProps, FormState> {
 					<a href="/_/telegram" onClick={() => ContactForm.logSocialLink('telegram')}>
 						<img src="/static/social/telegram.svg" alt="telegram" />
 					</a>
-					<a href="/_/medium" onClick={() => ContactForm.logSocialLink('medium')}>
-						<img src="/static/social/medium.svg" alt="medium" />
+					<a href="/_/email" onClick={() => ContactForm.logSocialLink('email')}>
+						<img src="/static/social/email.svg" alt="email" />
 					</a>
 				</div>
-
-				<ErrorMessage message={this.state.submitError} />
-			</form>
+			</React.Fragment>
 		);
 	}
 }

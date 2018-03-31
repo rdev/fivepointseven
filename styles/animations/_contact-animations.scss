@@ -25,6 +25,15 @@
 	}
 }
 
+@keyframes contact-links-fade-out {
+	from {
+		opacity: 0.3;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 @keyframes error-fade-up {
 	0% {
 		transform: translateY(40px);

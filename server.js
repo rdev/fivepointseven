@@ -21,7 +21,14 @@ async function startServer() {
 	server.use(helmet.contentSecurityPolicy({
 		directives: {
 			defaultSrc: ["'self'"],
-			scriptSrc: ["'self'", "'unsafe-inline'", 'www.googletagmanager.com', 'api.keen.io'],
+			scriptSrc: [
+				"'self'",
+				"'unsafe-inline'",
+				'www.googletagmanager.com',
+				'www.google.com',
+				'www.gstatic.com',
+				'api.keen.io',
+			],
 			connectSrc: ["'self'", 'www.googletagmanager.com', 'api.keen.io'],
 			styleSrc: ["'self'", "'unsafe-inline'"],
 		},

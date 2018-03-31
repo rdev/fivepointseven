@@ -3,9 +3,7 @@ declare type ContactState = {
 };
 
 declare type ContactData = {
-	captcha: string,
 	email: string,
-	subject: string,
 	message: string,
 };
 
@@ -16,8 +14,6 @@ declare type ContactError = {
 
 declare type ErrorMessages = {
 	email?: string,
-	subject?: string,
-	captcha?: string,
 	message?: string,
 };
 

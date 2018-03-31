@@ -19,35 +19,35 @@ export default class AboutParagraph extends React.Component<{}, {}> {
 
 	render() {
 		const nodeRelease = new Date('2013-03-28');
-		const birthDate = new Date('1994-10-02');
 		const today = new Date();
-
 		const nodeYears = today.getFullYear() - nodeRelease.getFullYear();
-		const myYears = today.getFullYear() - birthDate.getFullYear(); // This is a lie before October
+
 		return (
 			<p className="about-paragraph scale-fade-in" id="about-paragraph">
 				<span>
-					Hi! You wandered into an exposition section, so here{"'"}s my story. I{"'"}ll
-					try and keep it concise because I value your time.
-					{/* No, you're doing it because of the user research, you fucking liar. */}
-				</span>
-				<br />
-				<br />
-				<span>
-					I’m {myYears} years old, first began coding at 17 and after trying out a few
-					languages, I’ve decided to settle on JavaScript and started with Node as I found
-					it more exciting than the front-end at the time. First version of Node I’ve
-					worked with was v0.10.2. Man, that was {nodeYears} years ago, damn!
-				</span>
-				<br />
-				<br />
-				<span>
-					Anyway, today my field of knowledge includes Node, React, React Native, Docker
-					and all the things that go with it. Question. Do I really need to list all the{' '}
+					Hi! I’m Max, a JavaScript developer specializing in Node, React, React Native
+					and Electron. I also do other related things, in fact{' '}
 					<button className="inline-link" onClick={AboutParagraph.showFrameworksModal}>
-						frameworks
+						here’s a list
 					</button>{' '}
-					like people do?
+					of all the tools and frameworks I work with, but those 4 are my main focus.
+				</span>
+				<br />
+				<br />
+				<span>
+					I specialize in building scalable full stack aplications and have been doing it
+					since Node v0.10.2, which is {nodeYears} years at this point. First and foremost
+					I like building new exciting stuff. This is partially the motivation behind my
+					Open Source work (like my Web Components library or futuristic build system for
+					Node web apps).
+				</span>
+				<br />
+				<br />
+				<span>
+					I can handle full scope of your project from UI to dev work to deployment and
+					infrastructure. With probably the exception of database administration. But with
+					regards to everything else, let me know what your project is and let’s get it
+					done!
 				</span>
 			</p>
 		);

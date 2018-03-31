@@ -66,8 +66,6 @@ describe('Contact Page', () => {
 		};
 
 		wrapper.find('input#email').simulate('change', { target: { value: 'test@mail.com' } });
-		wrapper.find('input#subject').simulate('change', { target: { value: 'test subject' } });
-		wrapper.find('input#captcha').simulate('change', { target: { value: 'elon musk' } });
 		wrapper.find('textarea').simulate('change', { target: { value: 'Valid message body' } });
 
 		instance.handleSubmit(e);
@@ -117,5 +115,25 @@ describe('Contact Page', () => {
 		await sleep(0.6);
 		expect(instance.state.visible).toBeFalsy();
 		expect(instance.state.hiding).toBeFalsy();
+	});
+
+	test('Social links', () => {
+		ContactForm.logSocialLink = jest.fn();
+		const wrapper = shallow(<ContactForm />);
+
+		wrapper.find({ href: '/_/linkedin' }).simulate('click');
+		expect(ContactForm.logSocialLink).toBeCalledWith('linkedin');
+
+		wrapper.find({ href: '/_/twitter' }).simulate('click');
+		expect(ContactForm.logSocialLink).toBeCalledWith('twitter');
+
+		wrapper.find({ href: '/_/github' }).simulate('click');
+		expect(ContactForm.logSocialLink).toBeCalledWith('github');
+
+		wrapper.find({ href: '/_/telegram' }).simulate('click');
+		expect(ContactForm.logSocialLink).toBeCalledWith('telegram');
+
+		wrapper.find({ href: '/_/email' }).simulate('click');
+		expect(ContactForm.logSocialLink).toBeCalledWith('email');
 	});
 });
