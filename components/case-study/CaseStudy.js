@@ -23,9 +23,11 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 		// Don't forget the service worker
 		initServiceWorker();
 
-		Keen.recordEvent('case_study_view', {
-			name: this.props.project.name,
-		});
+		if (this.props.project) {
+			Keen.recordEvent('case_study_view', {
+				name: this.props.project.name,
+			});
+		}
 	}
 
 	componentWillUnmount() {}
@@ -58,6 +60,10 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 	render() {
 		const { project, children } = this.props;
 		const { nightMode } = this.state;
+
+		if (!project) {
+			return null;
+		}
 
 		return (
 			<React.Fragment>

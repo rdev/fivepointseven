@@ -5,14 +5,14 @@ import { stripIndent } from 'common-tags';
 import CaseStudy from '../../components/case-study/CaseStudy';
 import portfolioItems from '../../lib/portfolio-items';
 
-const [, , , , project] = portfolioItems;
+const project = portfolioItems.find(item => item.slug === 'sandstone');
 
 export default () => (
 	<CaseStudy project={project}>
 		<section>
 			<h2>What the hell is this thing</h2>
 			<p>
-				While building a relatively big project at StoreHub, we faced a little frontend
+				While building a relatively big project back at StoreHub, we faced a little frontend
 				challenge.
 				<br />
 				The project needed to be an app that was primarily statically rendered, but it also

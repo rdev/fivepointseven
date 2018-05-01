@@ -62,7 +62,8 @@ export default class FrameworksModal extends React.Component<{}, FrameworksState
 									this.selectItem(item);
 								}}
 							>
-								{item} {frameworks[item].mine ? <span>i built it</span> : null}
+								{item} {frameworks[item].mine ? <span>i built it</span> : null}{' '}
+								{frameworks[item].meh ? <span>briefly</span> : null}
 							</a>
 							<br />
 							<br />

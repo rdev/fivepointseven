@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 declare type CSProps = {
-	project: Project,
+	project?: Project,
 	children?: React.Node,
 };
 

@@ -3,7 +3,7 @@ import * as React from 'react';
 import CaseStudy from '../../components/case-study/CaseStudy';
 import portfolioItems from '../../lib/portfolio-items';
 
-const [, project] = portfolioItems;
+const project = portfolioItems.find(item => item.slug === 'storehub-website');
 
 export default () => (
 	<CaseStudy project={project}>
