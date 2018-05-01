@@ -44,6 +44,9 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 	}
 
 	async goToAbout(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Moving you to "About" page...');
 
@@ -89,6 +92,9 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 	}
 
 	async goToWork(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Moving you to "Work" page...');
 
@@ -134,6 +140,9 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 	}
 
 	async goToContact(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Moving you to "Contact" page...');
 
@@ -178,6 +187,9 @@ export default class Links extends React.Component<LinksProps, LinksState> {
 	}
 
 	async goToMain(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Moving you to home page...');
 

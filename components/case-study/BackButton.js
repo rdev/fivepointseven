@@ -24,6 +24,9 @@ export default class BackButton extends React.Component<BBProps, BBState> {
 	scrollSpyID: AnimationFrameID;
 
 	async goBack(e: SyntheticEvent<*>) {
+		if (e.metaKey) {
+			return;
+		}
 		e.preventDefault();
 		log('Taking you back...');
 
