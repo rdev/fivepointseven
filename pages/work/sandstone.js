@@ -195,7 +195,7 @@ export default () => (
 			</ul>
 			<p>Let’s briefly go through the exciting bits.</p>
 			<section>
-				<h3>String/template render</h3>
+				<h3>String render</h3>
 				<p>
 					We’ve already seen JSX, but I also mentioned that you don’t really need a build
 					system to get started with Sandstone. Consider a stateless component:
@@ -223,14 +223,7 @@ export default () => (
 				</Highlight>
 				<p>
 					No JSX used, no bundling/build system necessary, and you still get all the cool
-					things like Virtual DOM. Same also applies to{' '}
-					<a
-						href="https://sandstone.js.org/3_TEMPLATE_RENDER.html"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						template tags
-					</a>.
+					things like Virtual DOM.
 				</p>
 			</section>
 			<section>
@@ -270,17 +263,7 @@ export default () => (
 			<section>
 				<h3>Events</h3>
 				<p>
-					One of the coolest features of Web Components is the Shadow DOM. Shadow DOM
-					provides incapsulation for DOM and styles inside the custom element from the
-					main document. Essentially it’s a DOM inside your DOM.
-				</p>
-				<img src="/static/work/case-studies/sandstone/dawg.jpg" alt="yo-dawg-meme" />
-				<p>Sandstone fully supports open and closed Shadow DOM.</p>
-			</section>
-			<section>
-				<h3>Events</h3>
-				<p>
-					Obviously, some times you need your components to talk to each other. Now, in a
+					Some times you need your components to talk to each other. Now, in a
 					single page app, you’d normally have something like Redux handling the data flow
 					and you’d have your entire app wrapped in some sort of provier component.
 					<br />
