@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import Head from 'next/head';
+import { MDXProvider } from '@mdx-js/tag';
 import { log } from '../../lib/log';
 import Keen from '../../lib/keen';
 import GoogleAnalytics from '../GoogleAnalytics';
@@ -9,7 +10,15 @@ import CaseStudyHeader from '../../components/case-study/CaseStudyHeader';
 import BackButton from '../../components/case-study/BackButton';
 import NightModeToggle from '../../components/case-study/NightModeToggle';
 import initServiceWorker from '../../lib/service-worker';
+import InlineCode from './mdx-components/InlineCode';
+import Code from './mdx-components/Code';
 import stylesheet from '../../styles/styles.scss';
+
+const MDXComponents = {
+	div: 'section',
+	inlineCode: InlineCode,
+	code: Code,
+}
 
 export default class CaseStudy extends React.Component<CSProps, CSState> {
 	state = {
@@ -77,7 +86,9 @@ export default class CaseStudy extends React.Component<CSProps, CSState> {
 					<BackButton name={project.name} />
 					<CaseStudyHeader project={project} />
 					<main>
-						<div>{children}</div>
+						<MDXProvider components={MDXComponents}>
+							<div>{children}</div>
+						</MDXProvider>
 					</main>
 					<NightModeToggle onClick={() => this.toggleNightMode()} />
 				</div>

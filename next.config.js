@@ -1,8 +1,11 @@
+const withMDX = require('@zeit/next-mdx')({
+	extension: /\.mdx?$/,
+});
 const path = require('path');
 const glob = require('glob');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
-module.exports = {
+module.exports = withMDX({
 	poweredByHeader: false,
 	webpack: (config) => {
 		config.module.rules.push(
@@ -130,4 +133,4 @@ module.exports = {
 
 		return config;
 	},
-};
+});
