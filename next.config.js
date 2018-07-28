@@ -1,54 +1,48 @@
+const path = require('path');
+const glob = require('glob');
 const withMDX = require('@zeit/next-mdx')({
 	extension: /\.mdx?$/,
 });
-const path = require('path');
-const glob = require('glob');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = withMDX({
 	poweredByHeader: false,
 	webpack: (config) => {
-		config.module.rules.push(
-			{
-				test: /\.(css|scss)/,
-				loader: 'emit-file-loader',
-				options: {
-					name: 'dist/[path][name].[ext]',
-				},
+		config.module.rules.push({
+			test: /\.(css|scss)/,
+			loader: 'emit-file-loader',
+			options: {
+				name: 'dist/[path][name].[ext]',
 			},
-			{
-				test: /\.css$/,
-				use: ['babel-loader', 'raw-loader', 'postcss-loader'],
-			},
-			{
-				test: /\.s(a|c)ss$/,
-				use: [
-					'babel-loader',
-					'raw-loader',
-					'postcss-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							includePaths: ['styles', 'node_modules']
-								.map(d => path.join(__dirname, d))
-								.map(g => glob.sync(g))
-								.reduce((a, c) => a.concat(c), []),
-						},
+		}, {
+			test: /\.css$/,
+			use: ['babel-loader', 'raw-loader', 'postcss-loader'],
+		}, {
+			test: /\.s(a|c)ss$/,
+			use: [
+				'babel-loader',
+				'raw-loader',
+				'postcss-loader',
+				{
+					loader: 'sass-loader',
+					options: {
+						includePaths: ['styles', 'node_modules']
+							.map(d => path.join(__dirname, d))
+							.map(g => glob.sync(g))
+							.reduce((a, c) => a.concat(c), []),
 					},
-				],
-			},
-		);
+				},
+			],
+		});
 
 		config.plugins.push(new SWPrecacheWebpackPlugin({
 			verbose: true,
 			staticFileGlobsIgnorePatterns: [/\.next\//],
 			staticFileGlobs: ['static/**/**.*'],
-			runtimeCaching: [
-				{
-					handler: 'cacheFirst',
-					urlPattern: /^https?.*/,
-				},
-			],
+			runtimeCaching: [{
+				handler: 'cacheFirst',
+				urlPattern: /^https?.*/,
+			}],
 			dynamicUrlToDependencies: {
 				'/': [
 					'pages/index.js',
@@ -81,6 +75,7 @@ module.exports = withMDX({
 				],
 				'/work/my-website': [
 					'pages/work/my-website.js',
+					'pages/work/mdx/my-website.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -88,6 +83,7 @@ module.exports = withMDX({
 				],
 				'/work/convertable': [
 					'pages/work/convertable.js',
+					'pages/work/mdx/convertable.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -95,6 +91,7 @@ module.exports = withMDX({
 				],
 				'/work/storehub-website': [
 					'pages/work/storehub-website.js',
+					'pages/work/mdx/storehub-website.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -102,6 +99,7 @@ module.exports = withMDX({
 				],
 				'/work/storehub-display': [
 					'pages/work/storehub-display.js',
+					'pages/work/mdx/storehub-display.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -109,6 +107,7 @@ module.exports = withMDX({
 				],
 				'/work/sandstone': [
 					'pages/work/sandstone.js',
+					'pages/work/mdx/sandstone.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -116,6 +115,7 @@ module.exports = withMDX({
 				],
 				'/work/myplate': [
 					'pages/work/myplate.js',
+					'pages/work/mdx/myplate.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',
@@ -123,6 +123,39 @@ module.exports = withMDX({
 				],
 				'/work/mindway': [
 					'pages/work/mindway.js',
+					'pages/work/mdx/mindway.md',
+					'components/case-study/CaseStudy.js',
+					'components/case-study/CaseStudyHeader.js',
+					'components/case-study/BackButton.js',
+					'components/case-study/NightModeToggle.js',
+				],
+				'/work/expresx': [
+					'pages/work/expressx.js',
+					'pages/work/mdx/expressx.md',
+					'components/case-study/CaseStudy.js',
+					'components/case-study/CaseStudyHeader.js',
+					'components/case-study/BackButton.js',
+					'components/case-study/NightModeToggle.js',
+				],
+				'/work/dailywall': [
+					'pages/work/dailywall.js',
+					'pages/work/mdx/dailywall.md',
+					'components/case-study/CaseStudy.js',
+					'components/case-study/CaseStudyHeader.js',
+					'components/case-study/BackButton.js',
+					'components/case-study/NightModeToggle.js',
+				],
+				'/work/previewhunt': [
+					'pages/work/previewhunt.js',
+					'pages/work/mdx/previewhunt.md',
+					'components/case-study/CaseStudy.js',
+					'components/case-study/CaseStudyHeader.js',
+					'components/case-study/BackButton.js',
+					'components/case-study/NightModeToggle.js',
+				],
+				'/work/now-mobile': [
+					'pages/work/now-mobile.js',
+					'pages/work/mdx/now-mobile.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',

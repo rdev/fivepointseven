@@ -1,15 +1,23 @@
 require('dotenv').config();
-const { join } = require('path');
+const {
+	join,
+} = require('path');
 const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const nextjs = require('next');
-const { bot, socialRedirect, contact } = require('./lib/telegram');
+const {
+	bot,
+	socialRedirect,
+	contact,
+} = require('./lib/telegram');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = nextjs({ dev });
+const app = nextjs({
+	dev,
+});
 const handle = app.getRequestHandler();
 
 async function startServer() {
@@ -35,7 +43,9 @@ async function startServer() {
 	}));
 	server.use(compression());
 	server.use(bodyParser.json());
-	server.use(bodyParser.urlencoded({ extended: true }));
+	server.use(bodyParser.urlencoded({
+		extended: true,
+	}));
 
 	server.use((req, res, next) => {
 		res.setHeader('X-Powered-By', 'The Force');

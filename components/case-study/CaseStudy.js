@@ -18,7 +18,7 @@ const MDXComponents = {
 	div: 'section',
 	inlineCode: InlineCode,
 	code: Code,
-}
+};
 
 export default class CaseStudy extends React.Component<CSProps, CSState> {
 	state = {

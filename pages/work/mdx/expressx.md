@@ -55,7 +55,7 @@ There’s a few stages that happen when you run an app with ExpressX.
 
 *   Babel transpilation runs on your main code
 *   Style compilation runs
-*   Webpack runs no your frontend code
+*   Webpack runs on your frontend code
 *   Static assets are copied over to the build directory
 *   Static cleanup (we don’t want Sass in public folder)
 *   Child process starts
@@ -64,7 +64,7 @@ There’s a few stages that happen when you run an app with ExpressX.
 ### Child process?
 
 Yes, child process 😃. This is what allows live reload when backend code is changed.
-The way it’s set up is shamelessly stolen inspired by how Next.js does it. ExpressX starts your app in a
+The way it’s set up is ~~shamelessly stolen~~ inspired by how Next.js does it. ExpressX starts your app in a
 child process that it can watch for crashes and stop/restart when the change happens.
 
 ## How to use it?
