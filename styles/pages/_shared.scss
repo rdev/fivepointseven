@@ -71,6 +71,14 @@ body {
 	/* ie6-9 */
 }
 
+abbr {
+	cursor: help;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
 img {
 	-webkit-user-select: none;
 	-khtml-user-select: none;

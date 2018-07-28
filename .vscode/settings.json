@@ -22,8 +22,8 @@
 	"javascript.format.enable": false,
 	"javascript.validate.enable": false,
 	"eslint.autoFixOnSave": true,
-	"editor.formatOnPaste": true,
-	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
+	"editor.formatOnSave": false,
 	"prettier.eslintIntegration": true,
 	"flow.useNPMPackagedFlow": true,
 	"prettier.disableLanguages": ["markdown"]

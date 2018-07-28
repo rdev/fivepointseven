@@ -153,14 +153,14 @@ module.exports = withMDX({
 					'components/case-study/BackButton.js',
 					'components/case-study/NightModeToggle.js',
 				],
-				'/work/now-mobile': [
-					'pages/work/now-mobile.js',
-					'pages/work/mdx/now-mobile.md',
-					'components/case-study/CaseStudy.js',
-					'components/case-study/CaseStudyHeader.js',
-					'components/case-study/BackButton.js',
-					'components/case-study/NightModeToggle.js',
-				],
+				// '/work/now-mobile': [
+				// 	'pages/work/now-mobile.js',
+				// 	'pages/work/mdx/now-mobile.md',
+				// 	'components/case-study/CaseStudy.js',
+				// 	'components/case-study/CaseStudyHeader.js',
+				// 	'components/case-study/BackButton.js',
+				// 	'components/case-study/NightModeToggle.js',
+				// ],
 			},
 		}));
 
