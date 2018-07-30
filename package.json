@@ -13,7 +13,7 @@
 		"prettier":
 			"prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
 		"lint": "vave lint",
-		"test": "run-p lint flow jest",
+		"test": "run-p flow jest",
 		"test:coverage": "jest --coverage",
 		"codecov": "cat ./coverage/lcov.info | codecov",
 		"jest": "jest",

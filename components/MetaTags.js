@@ -10,7 +10,7 @@ export default ({ caseStudy, project }: MTProps) => (
 				'Full-stack JavaScript developer specializing in React, React Native and Node.js.'}`}
 		/>
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Preview Hunt" />
+		<meta name="twitter:title" content={project ? `Max Rovensky | ${project.name}` : 'Max Rovensky'} />
 		<meta name="twitter:description" content={`${caseStudy || 'Full-stack JavaScript developer specializing in React, React Native and Node.js'}`} />
 		<meta name="twitter:image" content={project ? `http://rdev.imgix.net/${project.image.replace('/static/', '')}?blend=${project.color.replace('#', '')}&balph=50&bm=normal&txt=Case%20Study:%20${project.name}&txtalign=center,middle&txtfont=Avenir-Light&txtsize=64&txtcolor=${project.color === '#fff' ? '4a4a4a' : 'fff'}&w=1024&h=512&fit=crop&crop=edges` : 'https://fivepointseven.com/static/preview-img.jpg'} />
 		<meta name="twitter:creator" content="@MaxRovensky" />
@@ -21,7 +21,7 @@ export default ({ caseStudy, project }: MTProps) => (
 			content={`${caseStudy ||
 				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
 		/>
-		<meta property="og:image" content={project ? `http://rdev.imgix.net/${project.image.replace('/static/', '')}?blend=${project.color.replace('#', '')}&balph=50&bm=normal&txt=Case%20Study:%20${project.name}&txtalign=center,middle&txtfont=Avenir-Light&txtsize=64&txtcolor=${project.color === '#fff' ? '4a4a4a' : 'fff'}&w=1024&h=512&fit=crop&crop=edges` : 'https://fivepointseven.com/static/preview-img.jpg'} />
+		<meta property="og:image" content={project ? `http://rdev.imgix.net/${project.image.replace('/static/', '')}?blend=${project.color.replace('#', '')}&balph=60&bm=normal&txt=Case%20Study:%20${project.name}&txtalign=center,middle&txtfont=Avenir-Light&txtsize=64&txtcolor=${project.color === '#fff' ? '4a4a4a' : 'fff'}&w=1024&h=512&fit=crop&crop=edges` : 'https://fivepointseven.com/static/preview-img.jpg'} />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:url" content="https://fivepointseven.com" />
 		<meta name="msapplication-TileColor" content="#ffffff" />

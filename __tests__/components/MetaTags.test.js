@@ -5,7 +5,7 @@ describe('Meta Tags', () => {
 	test('App renders index page', () => {
 		const wrapper = shallow(<MetaTags />);
 
-		expect(wrapper.find('meta')).toHaveLength(7);
+		expect(wrapper.find('meta')).toHaveLength(15);
 		expect(wrapper.find('link')).toHaveLength(16);
 	});
 });
