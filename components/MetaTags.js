@@ -1,21 +1,29 @@
 // @flow
 import * as React from 'react';
 
-export default ({ caseStudy }: MTProps) => (
+export default ({ caseStudy, project }: MTProps) => (
 	<React.Fragment>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta
 			name="description"
 			content={`${caseStudy ||
-				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
+				'Full-stack JavaScript developer specializing in React, React Native and Node.js.'}`}
 		/>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Preview Hunt" />
+		<meta name="twitter:description" content={`${caseStudy || 'Full-stack JavaScript developer specializing in React, React Native and Node.js'}`} />
+		<meta name="twitter:image" content={project ? `http://rdev.imgix.net/${project.image.replace('/static/', '')}?blend=${project.color.replace('#', '')}&balph=50&bm=normal&txt=Case%20Study:%20${project.name}&txtalign=center,middle&txtfont=Avenir-Light&txtsize=64&txtcolor=${project.color === '#fff' ? '4a4a4a' : 'fff'}&w=1024&h=512&fit=crop&crop=edges` : 'https://fivepointseven.com/static/preview-img.jpg'} />
+		<meta name="twitter:creator" content="@MaxRovensky" />
+		<meta name="twitter:site_name" content="Max Rovensky" />
 		<meta property="og:title" content="Max Rovensky" />
 		<meta
 			property="og:description"
 			content={`${caseStudy ||
 				'Full-stack JavaScript web developer specializing in React, React Native and Node.js.'}`}
 		/>
-		<meta property="og:image" content="/static/preview-img.jpg" />
+		<meta property="og:image" content={project ? `http://rdev.imgix.net/${project.image.replace('/static/', '')}?blend=${project.color.replace('#', '')}&balph=50&bm=normal&txt=Case%20Study:%20${project.name}&txtalign=center,middle&txtfont=Avenir-Light&txtsize=64&txtcolor=${project.color === '#fff' ? '4a4a4a' : 'fff'}&w=1024&h=512&fit=crop&crop=edges` : 'https://fivepointseven.com/static/preview-img.jpg'} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:url" content="https://fivepointseven.com" />
 		<meta name="msapplication-TileColor" content="#ffffff" />
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 		<link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png" />

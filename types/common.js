@@ -26,4 +26,5 @@ declare type InitialPropsQuery = {
 
 declare type MTProps = {
 	caseStudy?: string,
+	project?: Project,
 };
