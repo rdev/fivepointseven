@@ -36,6 +36,8 @@ async function startServer() {
 				'www.google.com',
 				'www.gstatic.com',
 				'api.keen.io',
+				'githy.com',
+				'platform.twitter.com',
 			],
 			connectSrc: ["'self'", 'www.googletagmanager.com', 'api.keen.io'],
 			styleSrc: ["'self'", "'unsafe-inline'"],
