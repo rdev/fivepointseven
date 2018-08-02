@@ -1,7 +1,7 @@
 
 ## The inception
 
-When I was launching [DailyWall](/work/dailywall) (check that project out if you haven't yet) on Product Hunt, [https://twitter.com/andreyazimov](Andrey Azimov) was helping me since I'm horrible at marketing. And when we were done preparing everything and re-cropping and re-compressing images for the 7th time we thought "Wouldn't it be cool if there was like a script that did all of this?"
+When I was launching [DailyWall](/work/dailywall) (check that project out if you haven't yet) on Product Hunt, [Andrey Azimov](https://twitter.com/andreyazimov) was helping me since I'm horrible at marketing. And when we were done preparing everything and re-cropping and re-compressing images for the 7th time we thought "Wouldn't it be cool if there was like a script that did all of this?"
 
 Then we figured that we're probably not the only ones who had this problem and it should probably be a web app rather than a script. So I immediately opened my code editor and started sketching it out. And in 2.5 days we released it 🙈
 
@@ -53,7 +53,7 @@ Firebase is super easy to get started with and I had some promotional credit fro
 
 ## Preview Pages
 
-One of the biggest features is the ability to generate preview pages. The way it works is when the user presses "Create Preview Page" we send all the information along with cropped images and a thumbnail to the server where it's saved, and we give the user a link which looks exactly like Product Hunt links to a page that also looks exactly like Producy Hunt page with a few minor changes like the logo to distinguish Preview Hunt pages from real posts.
+One of the biggest features is the ability to generate preview pages. The way it works is when the user presses "Create Preview Page" we send all the information along with cropped images and a thumbnail to the server where it's saved, and we give the user a link which looks exactly like Product Hunt links to a page that also looks exactly like Product Hunt page with a few minor changes like the logo to distinguish Preview Hunt pages from real posts.
 
 You can use this to validate Twitter cards, share with your team, etc. You can also delete the page at any time. Pages are also automatically deleted 24 hours after publishing and all of their assets are purged.
 

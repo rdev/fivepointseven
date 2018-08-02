@@ -41,7 +41,7 @@ export default class ProjectBrief extends React.Component<BriefProps, {}> {
 					}}
 				/>
 				<div id="work-box-project-info" className="work-box-project-info">
-					<div className="brief">
+					<div className={project.light ? 'brief light' : 'brief'}>
 						<h2>
 							{project.name.toLowerCase()}
 							<span>for {project.client}</span>

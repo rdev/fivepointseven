@@ -6,6 +6,7 @@ declare type Project = {
 	brief: string,
 	scopes: string[],
 	image: string,
+	light?: boolean,
 };
 
 declare type WorkInitialProps = {

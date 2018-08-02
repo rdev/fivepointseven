@@ -40,7 +40,7 @@ module.exports = withMDX({
 			staticFileGlobsIgnorePatterns: [/\.next\//],
 			staticFileGlobs: ['static/**/**.*'],
 			runtimeCaching: [{
-				handler: 'networkFirst',
+				handler: 'cacheFirst',
 				urlPattern: /^https?.*/,
 			}],
 			dynamicUrlToDependencies: {
