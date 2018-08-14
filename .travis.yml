@@ -30,6 +30,3 @@ after_success:
 - wget ${ASSETS_URL}/font-monospace.woff -q -O static/font-monospace.woff
 - npm run deploy
 - npm run alias
-env:
-  global:
-    secure: WB3oGrWmJDo0OIsXttov5P+Yh19Xu83ABw4lR6CHYhP28yPFm94ZHkE3l9z6EjA+o8UUvCYWZgbOTSADdlcvjYaXSEqkWogyt+wEfQcB6rPZ+hfKbRlGNG5SfcQW3TbI0y7K5kk9U9+cF0qGtxMlFKb0Y5nCPXQpHCQz9GLK2c39p9cEippqFWV09zRVB74et/egF1URftTVZqmAsQ2KTQdC4A+5txVtA/ELH0/qabsLOZHfSDRp4cmnDK/i/8r5MpduALQNbaxmL1rt7Acu1u0d+c8mEiAbKBOXOJtI7cHdWZWk3+bFbT1cjdGWp4xf+oEjkiW1HxKGqbaKhhb6Hl4Dx3oSedf9DMB19vOvczg20hSubpBoDCvFhmhZ0Sld7BY9Rz111+8iI1Pmutj9KOnYdephhmZKAond3z7c1ozFwxP7C6WCb2YjyJwhhCMecBcfF1JlONlsp5LxIfyLJ58ifag/+I872e4fDFRjtdnipax+3sH9b/OzAkiRUS7gsn4DpomTEhQ5vLQYdxWTaO+pW0HHfUofx6chAEVub0Ghpye1XjPkx8a/bRcZEiadQxU2kqfaG0DIOELh1ilC3S2BQVjx/Ik6CFxOFkjOtQrK7Q1E3bivcB+1jI2dwgwNI9RxVAt2NZnR6rOVSvQJu/tToPioWCMEoOY+kz4efdM=
