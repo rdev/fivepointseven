@@ -9,7 +9,7 @@ So I decided, ”Okay, this time will be different!”. And it certainly was <sp
 
 ## Show me the tech
 
-At the time of building and wrighting this, one of my primary areas of experience is
+At the time of building and writing this, one of my primary areas of experience is
 React. So it’s only fair to use React to build my own website, right? Well, yeah,
 but just building yet another React website is not good enough.
 
