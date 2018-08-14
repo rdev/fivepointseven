@@ -26,23 +26,23 @@ async function startServer() {
 	const server = express();
 
 	server.use(helmet());
-	server.use(helmet.contentSecurityPolicy({
-		directives: {
-			defaultSrc: ["'self'"],
-			scriptSrc: [
-				"'self'",
-				"'unsafe-inline'",
-				'www.googletagmanager.com',
-				'www.google.com',
-				'www.gstatic.com',
-				'api.keen.io',
-				'githy.com',
-				'platform.twitter.com',
-			],
-			connectSrc: ["'self'", 'www.googletagmanager.com', 'api.keen.io'],
-			styleSrc: ["'self'", "'unsafe-inline'"],
-		},
-	}));
+	// server.use(helmet.contentSecurityPolicy({
+	// 	directives: {
+	// 		defaultSrc: ["'self'"],
+	// 		scriptSrc: [
+	// 			"'self'",
+	// 			"'unsafe-inline'",
+	// 			'www.googletagmanager.com',
+	// 			'www.google.com',
+	// 			'www.gstatic.com',
+	// 			'api.keen.io',
+	// 			'githy.com',
+	// 			'platform.twitter.com',
+	// 		],
+	// 		connectSrc: ["'self'", 'www.googletagmanager.com', 'api.keen.io'],
+	// 		styleSrc: ["'self'", "'unsafe-inline'"],
+	// 	},
+	// }));
 	server.use(compression());
 	server.use(bodyParser.json());
 	server.use(bodyParser.urlencoded({

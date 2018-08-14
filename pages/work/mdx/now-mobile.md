@@ -113,7 +113,7 @@ Since ZEIT's own client apps are fully open source, it's only fair for this app 
 
 ## Conclusion
 
-I feel like that's most of it for this project. If you're using Now, [try it out](https://itunes.apple.com/us/app/convertable-calculator/id1394642357?ls=1&mt=8) yourself and let me know what you think about it.
+I feel like that's most of it for this project. If you're using Now, [try it out](https://itunes.apple.com/us/app/now-mobile/id1418434895?ls=1&mt=8) yourself and let me know what you think about it.
   
 If you're interested, you can check out other stuff I made by clicking that back button at top of the page :)
 
