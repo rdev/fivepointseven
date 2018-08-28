@@ -1,0 +1,8 @@
+{
+	"name": "fivepointseven",
+	"alias": ["fivepointseven.com", "www.fivepointseven.com"],
+	"type": "docker",
+	"features": {
+		"cloud": "v2"
+	}
+}

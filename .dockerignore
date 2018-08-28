@@ -1,2 +1,11 @@
-node_modules
-.next
+*
+!components
+!lib
+!pages
+!static
+!styles
+!next.config.js
+!postcss.config.js
+!server.js
+!package.json
+!yarn.lock
