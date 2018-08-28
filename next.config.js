@@ -129,7 +129,7 @@ module.exports = withMDX({
 					'components/case-study/BackButton.js',
 					'components/case-study/NightModeToggle.js',
 				],
-				'/work/expresx': [
+				'/work/expressx': [
 					'pages/work/expressx.js',
 					'pages/work/mdx/expressx.md',
 					'components/case-study/CaseStudy.js',
