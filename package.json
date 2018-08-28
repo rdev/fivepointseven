@@ -19,10 +19,6 @@
 		"flow:start": "flow start",
 		"flow": "flow"
 	},
-	"now": {
-		"name": "fivepointseven",
-		"alias": "fivepointseven.com"
-	},
 	"prettier": {
 		"printWidth": 100,
 		"useTabs": true,
