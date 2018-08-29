@@ -7,6 +7,7 @@ declare type Project = {
 	scopes: string[],
 	image: string,
 	light?: boolean,
+	url?: string,
 };
 
 declare type WorkInitialProps = {

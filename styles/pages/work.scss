@@ -53,6 +53,10 @@
 
 		&.light * {
 			color: #4a4a4a;
+		}
+		
+		&.light + span {
+			color: #4a4a4a;
 		} 
 	}
 
@@ -81,7 +85,6 @@
 		display: block;
 		color: $text;
 		text-decoration: none;
-		margin-top: 20px;
 		font-size: 2rem;
 		transition: $transition;
 
@@ -102,6 +105,23 @@
 	&::-webkit-scrollbar {
 		width: 0px;
 		background: transparent;
+	}
+}
+
+.work-box-project-links {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+
+	a {
+		cursor: pointer;
+	}
+
+	a:nth-child(1) {
+		margin-right: 20px;
+	}
+	a:nth-child(2) {
+		margin-left: 20px;
 	}
 }
 
@@ -141,7 +161,7 @@
 
 		&:before {
 			position: absolute;
-			top: 96%;
+			top: 95%;
 			left: 0;
 			z-index: -1;
 			width: 100%;

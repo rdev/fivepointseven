@@ -5547,9 +5547,9 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
-now@^10.1.6:
-  version "10.1.6"
-  resolved "https://registry.yarnpkg.com/now/-/now-10.1.6.tgz#58e4fce695588bd3ff5ebeee32d44b0e971b311a"
+now@^12.0.0-canary.73:
+  version "12.0.0-canary.78"
+  resolved "https://registry.yarnpkg.com/now/-/now-12.0.0-canary.78.tgz#9936b5ab35843688a405ef90f50ca5b618c28cb0"
 
 npm-run-all@^4.1.2:
   version "4.1.2"

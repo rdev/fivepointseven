@@ -48,9 +48,23 @@ export default class ProjectBrief extends React.Component<BriefProps, {}> {
 						</h2>
 						<p>
 							{project.brief}
-							<a href={`/work/${project.slug}`} onClick={this.goToProject}>
-								read the case {'>'}
-							</a>
+							<span className="work-box-project-links">
+								<a href={`/work/${project.slug}`} onClick={this.goToProject}>
+									read the case {'>'}
+								</a>
+								{
+									project.url
+										? (
+											<React.Fragment>
+												|
+												<a href={project.url} target="_blank" rel="noreferrer noopener">
+													check it out {'>'}
+												</a>
+											</React.Fragment>
+										  )
+										: null
+								}
+							</span>
 						</p>
 					</div>
 					<span className="scopes">{project.scopes.join(' • ')}</span>
