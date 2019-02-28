@@ -128,12 +128,21 @@
 			"test": {
 				"presets": [
 					[
-						"env",
+						"@babel/preset-env",
 						{
 							"modules": "commonjs"
 						}
 					],
+					"@babel/preset-flow",
 					"next/babel"
+				],
+				"plugins": [
+					[
+						"@babel/plugin-proposal-decorators",
+						{
+							"legacy": true
+						}
+					]
 				]
 			}
 		}
