@@ -11,7 +11,6 @@
 		"deploy": "now --token $NOW_TOKEN",
 		"alias": "now alias --token $NOW_TOKEN",
 		"prettier": "prettier-eslint './**/*.js' --write && prettier './**/*.json' './**/*.scss' --write",
-		"lint": "vave lint",
 		"test": "run-p flow jest",
 		"test:coverage": "jest --coverage",
 		"codecov": "cat ./coverage/lcov.info | codecov",
@@ -27,62 +26,63 @@
 		"singleQuote": true
 	},
 	"dependencies": {
-		"@mdx-js/mdx": "^0.12.0",
-		"@mdx-js/tag": "^0.11.0",
-		"@zeit/next-mdx": "^1.1.0",
-		"autobind-decorator": "^2.1.0",
-		"autoprefixer": "^8.2.0",
+		"@mdx-js/mdx": "^0.18.2",
+		"@mdx-js/tag": "^0.18.0",
+		"@zeit/next-mdx": "^1.2.0",
+		"autobind-decorator": "^2.4.0",
+		"autoprefixer": "^9.4.9",
 		"babel-register": "^6.26.0",
-		"body-parser": "^1.18.2",
-		"common-tags": "^1.7.2",
-		"compression": "^1.7.1",
-		"cross-env": "^5.1.4",
-		"dotenv": "^5.0.1",
-		"email-validator": "^1.1.1",
-		"express": "^4.16.3",
-		"glob": "^7.1.2",
-		"helmet": "^3.12.0",
-		"keen-tracking": "^1.4.0",
-		"mobile-detect": "^1.4.1",
-		"next": "^5.1.0",
+		"body-parser": "^1.18.3",
+		"common-tags": "^1.8.0",
+		"compression": "^1.7.3",
+		"cross-env": "^5.2.0",
+		"dotenv": "^6.2.0",
+		"email-validator": "^2.0.4",
+		"express": "^4.16.4",
+		"glob": "^7.1.3",
+		"helmet": "^3.15.1",
+		"keen-tracking": "1.4.0",
+		"mobile-detect": "^1.4.3",
+		"next": "^8.0.3",
 		"node-telegram-bot-api": "^0.30.0",
 		"node-where": "^1.1.0",
 		"postcss-easy-import": "^3.0.0",
-		"react": "^16.3.0",
-		"react-dom": "^16.3.0",
+		"react": "^16.8.3",
+		"react-dom": "^16.8.3",
 		"react-highlight": "^0.12.0",
-		"react-tweet-embed": "^1.1.0",
+		"react-tweet-embed": "^1.1.1",
 		"sw-precache-webpack-plugin": "^0.11.5"
 	},
 	"devDependencies": {
-		"babel-eslint": "^8.2.1",
-		"babel-preset-vave": "^0.3.0",
-		"codecov": "^3.0.0",
-		"enzyme": "^3.3.0",
-		"enzyme-adapter-react-16": "^1.1.1",
-		"eslint": "^4.15.0",
-		"eslint-config-airbnb": "^16.1.0",
+		"@babel/plugin-proposal-decorators": "^7.3.0",
+		"@babel/preset-flow": "^7.0.0",
+		"babel-eslint": "^10.0.1",
+		"codecov": "^3.2.0",
+		"enzyme": "^3.9.0",
+		"enzyme-adapter-react-16": "^1.10.0",
+		"eslint": "^5.14.1",
+		"eslint-config-airbnb": "^17.1.0",
 		"eslint-config-vave": "^0.4.0",
-		"eslint-formatter-pretty": "^1.3.0",
-		"eslint-plugin-flowtype": "^2.41.0",
-		"eslint-plugin-import": "^2.8.0",
-		"eslint-plugin-jsx-a11y": "^6.0.3",
-		"eslint-plugin-no-unsanitized": "^2.0.2",
-		"eslint-plugin-react": "^7.5.1",
+		"eslint-formatter-pretty": "^2.1.1",
+		"eslint-plugin-flowtype": "^3.4.2",
+		"eslint-plugin-import": "^2.16.0",
+		"eslint-plugin-jsx-a11y": "^6.2.1",
+		"eslint-plugin-no-unsanitized": "^3.0.2",
+		"eslint-plugin-react": "^7.12.4",
 		"eslint-plugin-security": "^1.4.0",
-		"flow-bin": "^0.65.0",
-		"flow-typed": "^2.2.3",
+		"flow-bin": "^0.93.0",
+		"flow-typed": "^2.5.1",
 		"identity-obj-proxy": "^3.0.0",
-		"jest": "^22.2.2",
-		"node-sass": "^4.7.2",
-		"now": "^12.0.0-canary.73",
-		"npm-run-all": "^4.1.2",
-		"postcss-loader": "^2.0.10",
-		"prettier": "^1.10.2",
-		"prettier-eslint": "^8.8.1",
-		"prettier-eslint-cli": "^4.7.0",
-		"raw-loader": "^0.5.1",
-		"sass-loader": "^6.0.6"
+		"jest": "^24.1.0",
+		"node-sass": "^4.11.0",
+		"now": "^14.0.1",
+		"npm-run-all": "^4.1.5",
+		"postcss-loader": "^3.0.0",
+		"prettier": "^1.16.4",
+		"prettier-eslint": "^8.8.2",
+		"prettier-eslint-cli": "^4.7.1",
+		"raw-loader": "^1.0.0",
+		"sass-loader": "^7.1.0"
 	},
 	"eslintConfig": {
 		"extends": "vave",
@@ -100,13 +100,29 @@
 			"development": {
 				"presets": [
 					"next/babel",
-					"vave"
+					"@babel/preset-flow"
+				],
+				"plugins": [
+					[
+						"@babel/plugin-proposal-decorators",
+						{
+							"legacy": true
+						}
+					]
 				]
 			},
 			"production": {
 				"presets": [
 					"next/babel",
-					"vave"
+					"@babel/preset-flow"
+				],
+				"plugins": [
+					[
+						"@babel/plugin-proposal-decorators",
+						{
+							"legacy": true
+						}
+					]
 				]
 			},
 			"test": {
@@ -117,8 +133,7 @@
 							"modules": "commonjs"
 						}
 					],
-					"next/babel",
-					"vave"
+					"next/babel"
 				]
 			}
 		}

@@ -105,9 +105,9 @@ module.exports = withMDX({
 					'components/case-study/BackButton.js',
 					'components/case-study/NightModeToggle.js',
 				],
-				'/work/sandstone': [
-					'pages/work/sandstone.js',
-					'pages/work/mdx/sandstone.md',
+				'/work/webcomp': [
+					'pages/work/webcomp.js',
+					'pages/work/mdx/webcomp.md',
 					'components/case-study/CaseStudy.js',
 					'components/case-study/CaseStudyHeader.js',
 					'components/case-study/BackButton.js',

@@ -76,10 +76,10 @@ And then in your HTML you have to have that container element somewhere:
 
 ### Okay, so what’s the deal?
 
-Now, here’s how you write and render the same thing as a Web Component using Sandstone:
+Now, here’s how you write and render the same thing as a Web Component using WebComp:
 
 ```jsx
-import { WebComponent, register } from 'sandstone';
+import { WebComponent, register } from '@webcomp/core';
 
 class CoolHeader extends WebComponent {
 	render({ content }) {
@@ -103,25 +103,37 @@ of the component are passed as arguments to `render()` for convenient destructur
 
 ## Features
 
-Sandstone actually has quite a few features.
+WebComp actually has quite a few features.
+
+JSX
+React-like syntax
+Virtual DOM
+Shadow DOM
+Component and element lifecycle hooks
+Attribute to props mapping
+Event based communication
+State sharing (context)
 
 *   JSX. Because JSX is awesome
-*   Rendering from string
-*   Rendering from template tags
-*   Flags. Basiclly they’re namespaced props
+*   React-like syntax and component lifecycle methods
+*   Element lifecycle methods
+*   Flags. Basiclly they’re namespaced ”service” props
 *   Virtual DOM
 *   Shadow DOM
-*   React-like lifecycle methods
 *   Link state for inputs
-*   Events
+*   Attribute to props mapping
+*   Event-based comminicatoon between components
+*   State sharing (context)
+*   Routing
+*   Tiny bundle size
 *   Babel preset
-*   Chrome DevTools extension
+*   React Dev Tools integration
 
 Let’s briefly go through the exciting bits.
 
 ### String render
 
-We’ve already seen JSX, but I also mentioned that you don’t really need a build system to get started with Sandstone.
+We’ve already seen JSX, but I also mentioned that you don’t really need a build system to get started with WebComp.
 
 Consider a stateless component:
 
@@ -134,7 +146,7 @@ export default ({ content }) => (
 );
 ```
 
-In Sandstone, you can write it as a string like this:
+In WebComp, you can write it as a string like this:
 
 ```jsx
 export default ({ content }) => `
@@ -152,16 +164,16 @@ No JSX used, no bundling/build system necessary, and you still get all the cool 
 One of the coolest features of Web Components is the Shadow DOM. Shadow DOM provides incapsulation for DOM and
 styles inside the custom element from the main document. Essentially it’s a DOM inside your DOM.
 
-![yo-dawg-meme](/static/work/case-studies/sandstone/dawg.jpg)
+![yo-dawg-meme](/static/work/case-studies/webcomp/dawg.jpg)
 
-Sandstone fully supports open and closed Shadow DOM.
+WebComp fully supports open and closed Shadow DOM.
 
 ### Linked state
 
-Forget writing `onChange` handlers for inputs. Every Sandstone component has a `linkState` method, that works like this:
+Forget writing `onChange` handlers for inputs. Every WebComp component has a `linkState` method, that works like this:
 
 ```jsx
-import { WebComponent } from 'sandstone';
+import { WebComponent } from '@webcomp/core';
 				 
 class CoolHeader extends WebComponent {
 	render({ content }) {
@@ -183,12 +195,12 @@ This approach works with React SPAs, but Web Components are self contained, and 
 of any number of components on the page, and one component doesn’t know about the others because of the incapsulation.
 So a different approach was needed for data sharing.  
   
-Sandstone has a built in event system based on [CustomEvents](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)
+WebComp has a built in event system based on [CustomEvents](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)
 specification (remember, ”use the platform™”) and it’s extremely simple to use. Let’s say you want a button component to
-change the color of a header in another component. Here’s how you would write that with Sandstone:
+change the color of a header in another component. Here’s how you would write that with WebComp:
 
 ```jsx
-import { WebComponent, Event } from 'sandstone';
+import { WebComponent, Event } from '@webcomp/core';
 
 class SuperButton extends WebComponent {
 	@Event('COLOR:CHANGE')
@@ -207,7 +219,7 @@ class SuperButton extends WebComponent {
 Then in your other component:
 
 ```jsx
-import { WebComponent } from 'sandstone';
+import { WebComponent } from '@webcomp/core';
 				 
 class SuperHeader extends WebComponent {
 	state = {
@@ -233,12 +245,13 @@ class SuperHeader extends WebComponent {
 ```
 
 Handlers passed to `this.on()` are autobound. Magic!  
-And that’s how you handle data sharing between Web Components in Sandstone.
+And that’s how you handle data sharing between Web Components in WebComp.
 
 ### Conclusion
 
-I feel like it’s already too long, so I’m gonna stop here. If you’re interested to know more about Sandstone,
-you can check out the [official docs](https://sandstone.js.org). Features not mentioned here include routing, SSR and more good stuff.
+I feel like it’s already too long, so I’m gonna stop here. If you’re interested to know more about WebComp,
+you can check out the [official docs](https://webcomp.gitbook.io). Features not mentioned here include routing, shared context and more good stuff.
+
 If you’re interested to know about more of my work, hit that back button at the top and check out my other projects.  
   
 Thanks for your time and have an amazing day!
