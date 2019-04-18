@@ -25,7 +25,7 @@ async function startServer() {
 
 	const server = express();
 
-	// server.use(helmet());
+	server.use(helmet());
 	// server.use(helmet.contentSecurityPolicy({
 	// 	directives: {
 	// 		defaultSrc: ["'self'"],
