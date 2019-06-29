@@ -8,7 +8,6 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const nextjs = require('next');
 const {
-	bot,
 	socialRedirect,
 	contact,
 } = require('./lib/telegram');
@@ -61,11 +60,6 @@ async function startServer() {
 			immutable: true,
 		}),
 	);
-
-	server.post(`/bot${process.env.TELEGRAM_TOKEN}`, (req, res) => {
-		bot.processUpdate(req.body);
-		res.sendStatus(200);
-	});
 
 	server.use('/service-worker.js', (req, res) => {
 		const filePath = join(__dirname, '.next/service-worker.js');
